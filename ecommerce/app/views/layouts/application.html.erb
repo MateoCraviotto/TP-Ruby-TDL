@@ -10,8 +10,12 @@
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  
   <body>
-    <%= yield %>
+    <%= render 'home/header' %>
+    <div class="container">
+      <br/>
+      <%= yield %>
+    </div>
   </body>
 </html>
