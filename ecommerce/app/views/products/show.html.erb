@@ -1,0 +1,36 @@
+<%= flash[:notice] %>
+
+<div class="container">
+    <h3>Import vehicle data from CSV<h3>
+    <%= form_tag import_products_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= submit_tag "Import" %>
+    <% end %>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>model</th>
+      <th>class</th>
+      <th>type</th>
+      <th>body</th>
+      <th>capacity</th>
+      <th>manufacturer</th>
+      <th>price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.model %></td>
+        <td><%= product.car_class %></td>
+        <td><%= product.car_type %></td>
+        <td><%= product.body %></td>
+        <td><%= product.capacity %></td>
+        <td><%= product.manufacturer %></td>
+        <td><%= product.price %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
