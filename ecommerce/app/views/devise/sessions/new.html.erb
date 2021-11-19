@@ -1,26 +1,32 @@
-<h2>Log in</h2>
+<div class="container text-center">
+  <h2>Log in</h2>
+</div>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="field form-group col-6 mx-auto">
+    <%= f.label :email, class: "col-form-label" %><br />
+    <%= f.email_field :email, class: "form-control form-control-lg", autofocus: true, autocomplete: "email", placeholder: "name@example.com" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+  <div class="field form-group col-6 mx-auto">
+    <%= f.label :password, class: "col-form-label" %><br />
+    <%= f.password_field :password, class: "form-control form-control-lg", autocomplete: "current-password" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+    <div class="field form-group form-check col-6 mx-auto">
+      <%= f.check_box :remember_me, class: "form-check-input", type: "checkbox" %>
+      <%= f.label :remember_me, class: "form-check-label"%>
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+ <br/>
+  <div class="actions d-grid gap-2 col-6 mx-auto">
+    <%= f.submit "Log in", class: "btn btn-primary btn-lg", type: "submit" %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<br/>
+<div class="col-6 mx-auto">
+  <%= render "devise/shared/links" %>
+</div>
