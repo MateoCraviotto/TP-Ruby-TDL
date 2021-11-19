@@ -10,4 +10,13 @@ class Product < ApplicationRecord
         end
         Product.import products, recursive: true
     end
+
+    def image()
+        img_for_html = self.car_class+"/"+self.model.downcase+".png"
+        img_path = "app/assets/images/"+img_for_html
+        if File.exist?(img_path)
+            return img_path
+        end
+        return nil
+    end
 end

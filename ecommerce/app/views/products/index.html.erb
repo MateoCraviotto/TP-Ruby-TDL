@@ -1,0 +1,9 @@
+<h1 class="text-center">This is our catalogue of products</h1>
+
+<div>
+    <p>If you want to add any product please <%= link_to "click here", add_products_path %></p>
+</div>
+
+<div class="large-container center-block">
+  <%= render @products %>
+</div>

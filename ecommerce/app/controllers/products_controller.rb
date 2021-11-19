@@ -6,8 +6,15 @@ class ProductsController < ApplicationController
     def edit
     end
 
-    def show
+    def index
         @products = Product.all
+    end
+
+    def show
+        @product = Product.find(params[:id])
+    end
+
+    def add
     end
 
     def import
@@ -16,6 +23,8 @@ class ProductsController < ApplicationController
     end
 
     def destroy
+        @product = Product.find(params[:id])
+        @product.destroy
+        redirect_to root_path
     end
-
 end
