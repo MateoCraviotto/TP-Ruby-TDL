@@ -8,6 +8,18 @@ class ProductsController < ApplicationController
 
     def index
         @products = Product.all
+        i = 0
+        @array_four_products = []
+        four_products = []
+        @products.each do |product|
+            four_products.push(product)
+            i+=1
+            if i == 4
+                @array_four_products.push(four_products)
+                four_products = []
+                i = 0
+            end
+        end
     end
 
     def show

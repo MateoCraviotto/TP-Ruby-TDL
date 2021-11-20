@@ -1,9 +1,11 @@
-<h1 class="text-center">This is our catalogue of products</h1>
+<h1 class="text-center">Our catalogue</h1>
 
 <div>
     <p>If you want to add any product please <%= link_to "click here", add_products_path %></p>
 </div>
 
 <div class="large-container center-block">
-  <%= render @products %>
+  <% @array_four_products.each do |four_products| %>
+    <%= render partial: 'product', locals: { products: four_products } %>
+  <% end %>
 </div>

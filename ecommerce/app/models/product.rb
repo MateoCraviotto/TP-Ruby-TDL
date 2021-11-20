@@ -12,10 +12,12 @@ class Product < ApplicationRecord
     end
 
     def image()
-        img_for_html = self.car_class+"/"+self.model.downcase+".png"
-        img_path = "app/assets/images/"+img_for_html
-        if File.exist?(img_path)
-            return img_path
+        model = self.model.downcase
+        model_aux = model.gsub(" ", "-").delete("/")
+        path_for_html = self.car_class+"/"+model_aux+".png"
+        path = "app/assets/images/"+path_for_html
+        if File.exist?(path)
+            return path_for_html
         end
         return nil
     end
