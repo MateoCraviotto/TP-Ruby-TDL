@@ -1,6 +1,6 @@
 <h1 class="text-center">Our catalogue</h1>
 
-<div>
+<div class="text-center">
     <p>If you want to add any product please <%= link_to "click here", add_products_path %></p>
 </div>
 
@@ -8,4 +8,8 @@
   <% @array_four_products.each do |four_products| %>
     <%= render partial: 'product', locals: { products: four_products } %>
   <% end %>
+</div>
+
+<div class="text-center">
+  <p>If you want to delete all the products please <%= link_to "click here", destroy_products_path %></p>
 </div>

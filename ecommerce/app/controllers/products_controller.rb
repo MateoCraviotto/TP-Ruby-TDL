@@ -34,6 +34,11 @@ class ProductsController < ApplicationController
         redirect_to products_path, notice: "Data successfully imported"
     end
 
+    def destroy_all
+        Product.destroy_all
+        redirect_to root_path
+    end
+
     def destroy
         @product = Product.find(params[:id])
         @product.destroy
