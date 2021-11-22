@@ -4,5 +4,19 @@
     <%= link_to "Catalogue", show_products_path, class:"navbar-brand" %>
     <%= link_to "Contact", contact_path, class:"navbar-brand" %>
     <%= link_to "About us", about_path, class:"navbar-brand" %>
+    <li class="nav-item dropdown nav-link">
+      <a class="nav-link dropdown-toggle navbar-brand" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">User</a>
+      <ul class="dropdown-menu">
+          <% if user_signed_in? %>
+            <li><%= link_to "My account", root_path, class:"dropdown-item" %></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"dropdown-item" %></li>
+          <% else %>
+            <li><%= link_to "Sign in", new_user_session_path, class:"dropdown-item" %></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><%= link_to "Sign up", new_user_registration_path, class:"dropdown-item" %></li>
+          <% end %>
+      </ul>
+    </li>
   </div>
 </nav>

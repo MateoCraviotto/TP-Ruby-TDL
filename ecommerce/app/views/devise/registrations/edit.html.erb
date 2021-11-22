@@ -1,0 +1,58 @@
+<br/>
+<div class="card col-6 mx-auto">
+  <h2 class="card-header">Edit <%= resource_name.to_s.humanize %></h2>
+  <div class="card-body">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field form-group">
+        <%= f.label :email, class: "col-form-label" %><br />
+        <%= f.email_field :email, class: "form-control form-control-lg", autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <div class="field form-group">
+        <%= f.label :password, class: "col-form-label" %> <i>(leave blank if you don't want to change it)</i><br />
+        <%= f.password_field :password, class: "form-control form-control-lg", autocomplete: "new-password" %>
+        <% if @minimum_password_length %>
+          <em><%= @minimum_password_length %> characters minimum</em>
+        <% end %>
+      </div>
+
+      <div class="field form-group">
+        <%= f.label :password_confirmation, class: "col-form-label" %><br />
+        <%= f.password_field :password_confirmation, class: "form-control form-control-lg", autocomplete: "new-password" %>
+      </div>
+
+      <div class="field form-group">
+        <%= f.label :current_password, class: "col-form-label" %> <i>(we need your current password to confirm your changes)</i><br />
+        <%= f.password_field :current_password, class: "form-control form-control-lg", autocomplete: "current-password" %>
+      </div>
+    <br/>
+      <div class="actions d-grid gap-2 col-3 mx-auto">
+        <%= f.submit "Update", class: "btn btn-primary btn-lg", type: "submit" %>
+      </div>
+    <% end %>
+    <br/>
+    <div class="actions d-grid gap-2 col-3 mx-auto">
+      <%= link_to "Back", :back, class: 'btn btn-secondary btn-lg' %>
+    </div>
+  </div>
+</div>
+<br/>
+
+<br/>
+<div class="card">
+  <div class="card-header">
+    Danger zone
+  </div>
+  <div class="card-body">
+    <h3 class="card-title">Delete my account</h3>
+    <p class="card-text">Unhappy?</p>
+    <br/>
+    <%= button_to "Delete my account", registration_path(resource_name), class: "btn btn-danger", data: { confirm: "Are you sure?" }, method: :delete %>
+  </div>
+</div>
