@@ -1,36 +1,19 @@
-<%= flash[:notice] %>
-
-<div class="container">
-    <h3>Import vehicle data from CSV<h3>
-    <%= form_tag import_products_path, multipart: true do %>
-        <%= file_field_tag :file %>
-        <%= submit_tag "Import" %>
-    <% end %>
+<div class="large-container center-block">
+  <div class="col">
+    <h1> <%= @product.model %> </h1>
+  </div>
+  <div class="row">
+    <div class="col-5">
+      <%= image_tag @product.image, class: "img-fluid rounded" %>
+    </div>
+    <div class="col">
+      <h3>Price: <%= @product.price %></h3>
+      <h5>Manufacturer: <%= @product.manufacturer %></h5>
+      <h5>Capacity: <%= @product.capacity %></h5>
+      <h5>Car type: <%= @product.car_type %></h5>
+      <h5>Car class: <%= @product.car_class %></h5>
+      <h5>Body car type: <%= @product.body %></h5>
+      <%= link_to "Delete product", @product, method: :delete %>
+    </div>
+  </div>
 </div>
-
-<table>
-  <thead>
-    <tr>
-      <th>model</th>
-      <th>class</th>
-      <th>type</th>
-      <th>body</th>
-      <th>capacity</th>
-      <th>manufacturer</th>
-      <th>price</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.model %></td>
-        <td><%= product.car_class %></td>
-        <td><%= product.car_type %></td>
-        <td><%= product.body %></td>
-        <td><%= product.capacity %></td>
-        <td><%= product.manufacturer %></td>
-        <td><%= product.price %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>

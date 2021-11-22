@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ecommerce</title>
+    <title>Legendary</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -13,7 +13,7 @@
     <%= favicon_link_tag asset_path("favicon.jpg") %>
   </head>
   
-  <body>
+  <body class="bg-secondary text-white">
 
     <% if notice %>
       <p class="notice alert-primary"><%= notice %></p>
@@ -21,10 +21,11 @@
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
+
     <%= render 'home/header' %>
-    <div class="container">
-      <br/>
-      <%= yield %>
-    </div>
+      <div class="container">
+        <br/>
+        <%= yield %>
+      </div>
   </body>
 </html>
