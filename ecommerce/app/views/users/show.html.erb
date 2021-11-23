@@ -1,0 +1,9 @@
+<div class="jumbotron">
+	<h1 class="display-4">Hi <%= @user.username %>!</h2>
+	<hr class="my-4">
+	<h3 class="display-6">User details:<h3>
+	<br/>
+	<p>Name: <%= @user.first_name %> <%= @user.last_name%></p>
+	<p>Email: <%= @user.email %></p>
+	<%= link_to "Edit Profile", edit_user_registration_path, class:"btn btn-primary"%>
+</div>

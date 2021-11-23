@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get "products", to: "products#show", as: :products
   get "products/import", to: "products#my_import", as: :import_products
 
+  resources :users
+
   resources :products do
     collection {post :import}
   end

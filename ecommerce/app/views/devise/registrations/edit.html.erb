@@ -28,10 +28,25 @@
       </div>
 
       <div class="field form-group">
+        <%= f.label :username, class: "col-form-label" %><br />
+        <%= f.text_field :username, class: "form-control form-control-lg", autofocus: true, autocomplete: "username", placeholder: "username" %>
+      </div>
+
+      <div class="field form-group">
+        <%= f.label :first_name, class: "col-form-label" %><br />
+        <%= f.text_field :first_name, class: "form-control form-control-lg", autofocus: true, autocomplete: "first_name", placeholder: "John" %>
+      </div>
+
+      <div class="field form-group">
+        <%= f.label :last_name, class: "col-form-label" %><br />
+        <%= f.text_field :last_name, class: "form-control form-control-lg", autofocus: true, autocomplete: "last_name", placeholder: "Doe" %>
+      </div>
+
+      <div class="field form-group">
         <%= f.label :current_password, class: "col-form-label" %> <i>(we need your current password to confirm your changes)</i><br />
         <%= f.password_field :current_password, class: "form-control form-control-lg", autocomplete: "current-password" %>
       </div>
-    <br/>
+      <br/>
       <div class="actions d-grid gap-2 col-3 mx-auto">
         <%= f.submit "Update", class: "btn btn-primary btn-lg", type: "submit" %>
       </div>

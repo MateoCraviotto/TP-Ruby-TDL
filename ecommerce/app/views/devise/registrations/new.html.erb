@@ -24,6 +24,20 @@
         <%= f.password_field :password_confirmation, class: "form-control form-control-lg", autocomplete: "new-password" %>
       </div>
 
+      <div class="field form-group col-6 mx-auto">
+        <%= f.label :username, class: "col-form-label" %><br />
+        <%= f.text_field :username, class: "form-control form-control-lg", autofocus: true, autocomplete: "username", placeholder: "Username" %>
+      </div>
+
+      <div class="field form-group col-6 mx-auto">
+        <%= f.label :first_name, class: "col-form-label" %><br />
+        <%= f.text_field :first_name, class: "form-control form-control-lg", autofocus: true, autocomplete: "first_name", placeholder: "John" %>
+      </div>
+
+      <div class="field form-group col-6 mx-auto">
+        <%= f.label :last_name, class: "col-form-label" %><br />
+        <%= f.text_field :last_name, class: "form-control form-control-lg", autofocus: true, autocomplete: "last_name", placeholder: "Doe" %>
+      </div>
     <br/>
       <div class="actions d-grid gap-2 col-6 mx-auto">
         <%= f.submit "Sign up", class: "btn btn-primary btn-lg", type: "submit" %>
