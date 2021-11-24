@@ -43,8 +43,12 @@
     }
 }
 
+.profile-thumbnail{
+    width: 150px;
+}
+
 body{
-    background: url('https://p2.piqsels.com/preview/508/250/386/porsche-oldtimer-m%C3%BChlheim-mulhouse.jpg') no-repeat center center fixed;
+    background: url("background_image.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
