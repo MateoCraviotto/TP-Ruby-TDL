@@ -5,6 +5,16 @@
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
+      
+      <% if false %>
+        <div class="field form-group col-6 mx-auto">
+          <% if resource.avatar.attached? %>
+            <%= image_tag(resource.avatar) %>
+          <% else %>
+            <%= image_tag("default_profile.jpg")%>
+          <% end %>
+        </div>
+      <% end %>
 
       <div class="field form-group col-6 mx-auto">
         <%= f.label :email, class: "col-form-label" %><br />
