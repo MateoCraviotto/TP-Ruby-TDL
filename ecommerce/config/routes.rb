@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get "products/destroy", to: "products#destroy_all", as: :destroy_products
   delete "products/:id", to: "products#destroy", as: :delete_product
 
+  resources :users
+
   resources :products do
     collection {post :import}
   end
