@@ -47,6 +47,19 @@
     width: 150px;
 }
 
+.home_link{
+    text-decoration: none;
+    color: rgb(255, 192, 192);
+}
+
+.home_link:hover{
+    color: rgb(255, 0, 0);
+    -webkit-text-fill-color: rgb(255, 0, 0);
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: white;
+    -webkit-font-smoothing: antialiased
+}
+
 body{
     background: url("background_image.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
