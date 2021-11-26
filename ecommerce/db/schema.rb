@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2021_11_26_045714) do
     t.integer "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id" #Seller's ID
+    t.integer "user_id"
     t.index ["user_id"], name: "index_cars_on_user_id"
   end
 

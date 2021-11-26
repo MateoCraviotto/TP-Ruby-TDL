@@ -6,9 +6,8 @@ Rails.application.routes.draw do
   
   root to: "home#index"
   
-  get "about/index", to: "about#index", as: :about
-  
-  get "contact/index", to: "contact#index", as: :contact
+  get "about", to: "about#index", as: :about
+  get "contact", to: "contact#index", as: :contact
 
-  
+  get "active_posts", to: "cars#active_posts"
 end

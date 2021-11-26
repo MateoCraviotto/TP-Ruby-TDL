@@ -90,6 +90,35 @@ class CarsController < ApplicationController
     redirect_to cars_path, notice: "Not autorithized to edit this car." if @car.nil?
   end
 
+  def active_posts
+    @cars = Car.all
+
+    i = 0
+    @array_four_cars = []
+    four_cars = []
+
+    @cars.each do |car|
+      if car.user_id == current_user.id
+        four_cars.push(car)
+        i+=1
+        if i == 4
+            @array_four_cars.push(four_cars)
+            four_cars = []
+            
+            i = 0
+        end
+      end
+    end
+    if i != 0
+      @array_four_cars.push(four_cars)
+      four_cars = []
+    end
+
+    @last_index = @array_four_cars.count
+    @last_index -= 1
+    
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_car

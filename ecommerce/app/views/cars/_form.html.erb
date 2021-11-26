@@ -1,5 +1,5 @@
 <div class="card col-6 mx-auto">
-  <h2 class="card-header text-dark">Add you car FOR SALE</h2>
+  <h2 class="card-header text-dark">Car Sale Form</h2>
   <div class="card-body">
     <%= form_with(model: car) do |form| %>
       <% if car.errors.any? %>
@@ -13,6 +13,10 @@
           </ul>
         </div>
       <% end %>
+
+      <div class="field form-group col-10 mx-auto">
+        <%= form.label "Add your car for sale by filling the next form" %>
+      </div>
 
       <div class="field form-group col-10 mx-auto">
         <%= form.label "Car image" %>

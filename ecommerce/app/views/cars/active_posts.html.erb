@@ -2,13 +2,13 @@
 
 <div class="container mx-auto cars--index--catalogue-container">
   <br>
-  <h1 class="text-center">Catalogue</h1>
-  <p class="text-center lead"><small>Happy shopping!</small></p>
+  <h1 class="text-center">My active posts</h1>
+  <p class="text-center lead"><small>These are the cars your are currently selling.</small></p>
   <br><br>
   
   <% @array_four_cars.each_with_index do |four_cars, j| %>
     
-    <%= render partial: 'car_catalogue', locals: {cars: four_cars} %>
+    <%= render partial: 'active_sales_posts', locals: {cars: four_cars} %>
 
     <% if j != @last_index %>
       <br><br><br>
