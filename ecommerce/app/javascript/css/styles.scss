@@ -135,6 +135,7 @@ nav {
     background-color: rgb(94, 175, 29);
     border: none;
     align: justify;
+    border-radius: 10px;
 }
 
 .btn-buy:hover {
@@ -148,6 +149,18 @@ nav {
 
 .btn-buy:active {
     outline-color: none;
+}
+
+.active-posts--btn-edit-left {
+    float: left;
+    width: 49%;
+    border-radius: 10px;
+}
+
+.active-posts--btn-delete-right {
+    float: right;
+    width: 49%;
+    border-radius: 10px;
 }
 
 body{
