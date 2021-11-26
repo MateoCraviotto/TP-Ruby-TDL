@@ -1,0 +1,68 @@
+<div class="card col-6 mx-auto">
+  <h2 class="card-header text-dark">Add you car FOR SALE</h2>
+  <div class="card-body">
+    <%= form_with(model: car) do |form| %>
+      <% if car.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(car.errors.count, "error") %> prohibited this car from being saved:</h2>
+
+          <ul>
+            <% car.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field form-group col-10 mx-auto">
+        <%= form.label "Car image" %>
+        <%= form.file_field :car_image, required: true %>
+      </div>
+
+      <div class="field form-group col-10 mx-auto">
+        <%= form.label :car_model, class:"col-form-label" %>
+        <%= form.text_field :car_model, class:"form-control form-control-lg field", maxlength:"17", required: true %>
+      </div>
+
+      <div class="field form-group col-10 mx-auto">
+        <%= form.label :car_class, class:"col-form-label" %>
+        <%= form.text_field :car_class, class:"form-control form-control-lg field", maxlength:"17", required: true %>
+      </div>
+
+      <div class="field form-group col-10 mx-auto">
+        <%= form.label :car_type, class:"col-form-label" %>
+        <%= form.text_field :car_type, class:"form-control form-control-lg field", maxlength:"17", required: true %>
+      </div>
+
+      <div class="field form-group col-10 mx-auto">
+        <%= form.label :body, class:"col-form-label" %>
+        <%= form.text_field :body, class:"form-control form-control-lg field", maxlength:"17", required: true %>
+      </div>
+
+      <div class="field form-group col-10 mx-auto">
+        <%= form.label :capacity, class:"col-form-label" %>
+        <%= form.text_field :capacity, class:"form-control form-control-lg field", maxlength:"17", required: true %>
+      </div>
+
+      <div class="field form-group col-10 mx-auto">
+        <%= form.label :manufacturer, class:"col-form-label" %>
+        <%= form.text_field :manufacturer, class:"form-control form-control-lg field", maxlength:"17", required: true %>
+      </div>
+
+      <div class="field form-group col-10 mx-auto">
+        <%= form.label :price %>
+        <%= form.number_field :price, required: true, min:"0", max:(2**63).to_s %>
+      </div>
+      
+      <div class="field form-group">
+         <%= form.number_field :user_id, id: :car_user_id, value: current_user.id, type: :hidden %> 
+      </div>
+
+      <br>
+
+      <div class="actions form-group text-center">
+        <%= form.submit class: "btn btn-success btn-lg" %>
+      </div>
+    <% end %>
+  </div>
+</div>

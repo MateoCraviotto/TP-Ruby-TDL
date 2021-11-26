@@ -18,7 +18,7 @@
 
       <div class="field form-group col-6 mx-auto">
         <%= f.label :email, class: "col-form-label" %><br />
-        <%= f.email_field :email, class: "form-control form-control-lg", autofocus: true, autocomplete: "email", placeholder: "name@example.com", require: true %>
+        <%= f.email_field :email, class: "form-control form-control-lg", autofocus: true, autocomplete: "email", placeholder: "name@example.com" %>
       </div>
 
       <div class="field form-group col-6 mx-auto">
@@ -26,27 +26,27 @@
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
-        <%= f.password_field :password, class: "form-control form-control-lg", autocomplete: "new-password", require: true %>
+        <%= f.password_field :password, class: "form-control form-control-lg", autocomplete: "new-password" %>
       </div>
 
       <div class="field form-group col-6 mx-auto">
         <%= f.label :password_confirmation, class: "col-form-label" %><br />
-        <%= f.password_field :password_confirmation, class: "form-control form-control-lg", autocomplete: "new-password", require: true  %>
+        <%= f.password_field :password_confirmation, class: "form-control form-control-lg", autocomplete: "new-password" %>
       </div>
 
       <div class="field form-group col-6 mx-auto">
         <%= f.label :username, class: "col-form-label" %><br />
-        <%= f.text_field :username, class: "form-control form-control-lg", autofocus: true, autocomplete: "username", placeholder: "Username", require: true  %>
+        <%= f.text_field :username, class: "form-control form-control-lg", autofocus: true, autocomplete: "username", placeholder: "Username" %>
       </div>
 
       <div class="field form-group col-6 mx-auto">
         <%= f.label :first_name, class: "col-form-label" %><br />
-        <%= f.text_field :first_name, class: "form-control form-control-lg", autofocus: true, autocomplete: "first_name", placeholder: "John", require: true  %>
+        <%= f.text_field :first_name, class: "form-control form-control-lg", autofocus: true, autocomplete: "first_name", placeholder: "John" %>
       </div>
 
       <div class="field form-group col-6 mx-auto">
         <%= f.label :last_name, class: "col-form-label" %><br />
-        <%= f.text_field :last_name, class: "form-control form-control-lg", autofocus: true, autocomplete: "last_name", placeholder: "Doe", require: true  %>
+        <%= f.text_field :last_name, class: "form-control form-control-lg", autofocus: true, autocomplete: "last_name", placeholder: "Doe" %>
       </div>
     <br/>
       <div class="actions d-grid gap-2 col-6 mx-auto">

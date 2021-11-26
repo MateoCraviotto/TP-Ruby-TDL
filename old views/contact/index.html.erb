@@ -1,0 +1,17 @@
+<div class="container center-block text-white">
+    <br><br>
+    <h2 class="text-center">Here is our contact information and social media:</h2>
+    <p class="text-center lead"><small>You can send us your photos with your brand new Legendary Motorsport car ;)</small></p>
+    
+    <br><br><br>
+
+    <div class="text-center">
+        <%= link_to image_tag("gmail_logo.png", class:"contact--logo-image") + " " + @contact_email , "https://mail.google.com/mail/?view=cm&fs=1&to=" + @contact_email, target:"_blank", class:"btn btn-light contact--button" %>
+        
+        <%# Las páginas de Twitter e Instagram son imágenes almacenadas en un sitio externo (subidas a mi cuenta de Imgur) para representar el enlace externo si fueran reales #%>
+        <%= link_to image_tag("twitter_logo.png", class:"contact--logo-image") + " Twitter" , asset_path("https://www.imgur.com/m2Ro86V.png") , target:"_blank", class:"btn btn-light contact--button" %>
+        <%= link_to image_tag("instagram_logo.png", class:"contact--logo-image") + " Instagram" , asset_path("https://www.imgur.com/oOve3ON.png") , target:"_blank", class:"btn btn-light contact--button" %>
+    </div>
+
+</div>
+</div>

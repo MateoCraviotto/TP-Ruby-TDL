@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<div class="large-container center-block">
+  <div class="col">
+    <h1> <%= @car.car_model %> </h1>
+  </div>
+  <div class="row">
+  <% if @car.car_image.attached? %>
+    <div class="col-5">
+      <image src="<%= (url_for(@car.car_image)) %>">
+    </div>
+  <% end %>
+    <div class="col">
+      <h3>Price: <%= @car.price %></h3>
+      <h5>Manufacturer: <%= @car.manufacturer %></h5>
+      <h5>Capacity: <%= @car.capacity %></h5>
+      <h5>Car type: <%= @car.car_type %></h5>
+      <h5>Car class: <%= @car.car_class %></h5>
+      <h5>Body car type: <%= @car.body %></h5>
+    </div>
+  </div>
+</div>
+
+<%= link_to 'Edit', edit_car_path(@car) %> |
+<%= link_to 'Back', cars_path %>

@@ -69,14 +69,15 @@
 </div>
 <br/>
 
-<div class="card col-6 mx-auto text-black">
+<br/>
+<div class="card text-black">
   <div class="card-header">
     Danger zone
   </div>
-  <div class="card-body text-center">
-    <h3 class="card-title text-start">Delete my account</h3>
-    <p class="card-text text-start">Unhappy?</p>
-    <%= button_to "Delete my account", registration_path(resource_name), class: "btn btn-danger btn-lg text-center", data: { confirm: "Are you sure?" }, method: :delete %>
+  <div class="card-body">
+    <h3 class="card-title">Delete my account</h3>
+    <p class="card-text">Unhappy?</p>
+    <br/>
+    <%= button_to "Delete my account", registration_path(resource_name), class: "btn btn-danger", data: { confirm: "Are you sure?" }, method: :delete %>
   </div>
 </div>
-<br><br>
