@@ -1,22 +1,29 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <%= link_to "Home", root_path, class:"navbar-brand" %>
-    <%= link_to "Catalogue", show_products_path, class:"navbar-brand" %>
-    <%= link_to "Contact", contact_path, class:"navbar-brand" %>
-    <%= link_to "About us", about_path, class:"navbar-brand" %>
-    <li class="nav-item dropdown nav-link">
-      <a class="nav-link dropdown-toggle navbar-brand" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">User</a>
-      <ul class="dropdown-menu">
-          <% if user_signed_in? %>
-            <li><%= link_to "Profile", current_user, class:"dropdown-item" %></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"dropdown-item" %></li>
-          <% else %>
-            <li><%= link_to "Sign in", new_user_session_path, class:"dropdown-item" %></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><%= link_to "Sign up", new_user_registration_path, class:"dropdown-item" %></li>
-          <% end %>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><%= link_to image_tag("legendary_motorsport_logo_white.png", class:"header--lm-logo"), root_path, class:"navbar-brand" %></li>
+        <li class="nav-item"><%= link_to "Catalogue", show_products_path, class:"nav-link header--nav-item" %></li>
+        <li class="nav-item"><%= link_to "Contact", contact_path, class:"nav-link header--nav-item" %></li>
+        <li class="nav-item"><%= link_to "About us", about_path, class:"nav-link header--nav-item" %></li>
       </ul>
-    </li>
+      <ul class="navbar-nav" aria-labelledby="navbarDarkDropdownMenuLink">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle header--nav-item" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">User</a>
+          <ul class="dropdown-menu dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDarkDropdownMenuLink">
+            <% if user_signed_in? %>
+              <li><%= link_to "Profile", current_user, class:"dropdown-item" %></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"dropdown-item" %></li>
+            <% else %>
+              <li><%= link_to "Sign in", new_user_session_path, class:"dropdown-item" %></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><%= link_to "Sign up", new_user_registration_path, class:"dropdown-item" %></li>
+            <% end %>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
   </div>
 </nav>

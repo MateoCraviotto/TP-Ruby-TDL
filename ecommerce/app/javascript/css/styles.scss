@@ -47,12 +47,12 @@
     width: 150px;
 }
 
-.home-link, .about-link{
+.home--link, .about--link{
     text-decoration: none;
     color: rgb(255, 192, 192);
 }
 
-.home-link:hover, .about-link:hover{
+.home--link:hover, .about--link:hover{
     color: rgb(255, 0, 0);
     -webkit-text-fill-color: rgb(255, 0, 0);
     -webkit-text-stroke-width: 0.25px;
@@ -60,15 +60,51 @@
     -webkit-font-smoothing: antialiased;
 }
 
-.contact-logo-image {
+.contact--logo-image {
     width: 25px;
     margin-right: 8px;
 }
 
-.contact-button {
+.contact--button {
     border-radius: 10px;
     margin-right: 3em;
     margin-left: 3em;
+}
+
+.new-session--checkbox-label {
+    user-select: none;
+}
+
+.header--lm-logo {
+    padding: 0;
+    margin-top: 0.25em !important;
+    margin-bottom: 0.2em !important;
+    height: 35px;
+    opacity: 100%;
+    
+}
+
+.header--lm-logo:hover {
+    -webkit-filter: drop-shadow(5px 5px 5px rgb(255, 0, 0) );
+    filter: drop-shadow(5px 5px 5px rgb(255, 0, 0));
+}
+
+nav {
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,.2);
+}
+
+.header--nav-item {
+    color: rgba(255, 255, 255, 0.959) !important;
+    font-size: 1.2em;
+}
+
+.header--nav-item:hover {
+    color: white !important;
+    text-shadow: 0px 0px 3px #ff0000, 0px 0px 10px #ff0000;
+}
+
+.dropdown-menu {
+    min-width: 1em !important;
 }
 
 body{
