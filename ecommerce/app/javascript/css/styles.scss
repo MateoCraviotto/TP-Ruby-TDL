@@ -172,6 +172,42 @@ nav {
     border-radius: 12px;
 }
 
+.show--card {
+    border-radius: 1em;
+    background:rgba(95, 95, 95, 0.877);
+    border-radius: 1.5em;
+    box-shadow: 0px 0px 10px #000000;
+    
+}
+
+.show--car-image {
+    border-radius: 0.5em;
+    box-shadow: 0px 0px 3px #000000;
+    vertical-align: center;
+}
+
+.show--car-head {
+    color: rgb(255, 192, 192);
+}
+
+.show--div-info {
+    width: 100%;
+}
+
+.show--div-info-image {
+    float: left;
+    width: 40%;
+    text-align: center;
+}
+
+.show--div-info-attributes {
+    font-size: 130%;
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+}
+
 body{
     background: url("background_image.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;

@@ -1,25 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<div class="large-container center-block">
-  <div class="col">
-    <h1> <%= @car.car_model %> </h1>
-  </div>
-  <div class="row">
-  <% if @car.car_image.attached? %>
-    <div class="col-5">
-      <image src="<%= (url_for(@car.car_image)) %>">
+<div class="card mx-auto show--card text-light">
+  <h2 class="card-header text-light text-center show--car-head"><%= @car.car_model %></h2>
+  <div class="card-body">
+    <div class="d-inline-block show--div-info">
+      <div class="d-inline-block show--div-info-image" >
+        <% if @car.car_image.attached? %>
+            <image src="<%= (url_for(@car.car_image)) %>" class="img-fluid show--car-image d-inline">
+        <% end %>
+      </div>
+      <div class="show--div-info-attributes">
+            PRICE: <%= "$" + number_with_delimiter( @car.price, delimiter:".").to_s %><br>
+            MANUFACTURER: <%= @car.manufacturer %><br>
+            CAPACITY: <%= @car.capacity %><br>
+            CAR TYPE: <%= @car.car_type %><br>
+            CAR CLASS: <%= @car.car_class %><br>
+            BODY CAR TYPE: <%= @car.body %><br> 
+      </div>
     </div>
-  <% end %>
-    <div class="col">
-      <h3>Price: <%= @car.price %></h3>
-      <h5>Manufacturer: <%= @car.manufacturer %></h5>
-      <h5>Capacity: <%= @car.capacity %></h5>
-      <h5>Car type: <%= @car.car_type %></h5>
-      <h5>Car class: <%= @car.car_class %></h5>
-      <h5>Body car type: <%= @car.body %></h5>
-    </div>
+  
+    <br><br>
+    <% if user_signed_in? and @car.user_id == current_user.id %>
+      Hey, this is your post, you can edit it from here:&nbsp &nbsp &nbsp
+      <div class="d-inline"><%= link_to "EDIT", edit_car_path(@car), class:"btn btn-warning" %></div>
+    <% end %>
+    <br>
   </div>
-</div>
+    
 
-<%= link_to 'Edit', edit_car_path(@car) %> |
-<%= link_to 'Back', cars_path %>
+  
+</div>
