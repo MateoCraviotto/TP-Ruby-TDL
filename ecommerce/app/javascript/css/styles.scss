@@ -135,6 +135,7 @@ nav {
     background-color: rgb(94, 175, 29);
     border: none;
     align: justify;
+    border-radius: 10px;
 }
 
 .btn-buy:hover {
@@ -148,6 +149,63 @@ nav {
 
 .btn-buy:active {
     outline-color: none;
+}
+
+.active-posts--btn-edit-left {
+    float: left;
+    width: 49%;
+    border-radius: 10px;
+}
+
+.active-posts--btn-delete-right {
+    float: right;
+    width: 49%;
+    border-radius: 10px;
+}
+
+.car-form--card-div {
+    border-radius: 1em;
+    box-shadow: 0px 0px 6px #000000;
+}
+
+.car-form--btn-submit {
+    border-radius: 12px;
+}
+
+.show--card {
+    border-radius: 1em;
+    background:rgba(95, 95, 95, 0.877);
+    border-radius: 1.5em;
+    box-shadow: 0px 0px 10px #000000;
+    
+}
+
+.show--car-image {
+    border-radius: 0.5em;
+    box-shadow: 0px 0px 3px #000000;
+    vertical-align: center;
+}
+
+.show--car-head {
+    color: rgb(255, 192, 192);
+}
+
+.show--div-info {
+    width: 100%;
+}
+
+.show--div-info-image {
+    float: left;
+    width: 40%;
+    text-align: center;
+}
+
+.show--div-info-attributes {
+    font-size: 130%;
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
 }
 
 body{
