@@ -27,6 +27,13 @@
     <br>
   </div>
     
-
-  
+<div class="container">
+<h3>Any questions?</h3>
+<%= link_to "Ask", new_car_question_path(@car), class: "btn btn-primary" %>
+<br/>
+<br/>
+<h3>All questions</h3> 
+<%= link_to "Questions", car_questions_path(@car), class:"btn btn-secondary" %>
+<br/>
+<br/>
 </div>

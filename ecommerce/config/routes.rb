@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :cars
+  resources :cars do
+    resources :questions
+  end
   
   devise_for :users
   resources :users
