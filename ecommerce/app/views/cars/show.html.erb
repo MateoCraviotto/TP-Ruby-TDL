@@ -28,10 +28,6 @@
   </div>
 </div>
 
-</div>
-  <%= link_to "Doubts? Ask the seller", new_car_question_path(@car), class: "btn btn-primary d-block center-block" %>
-</div>
-
 <br>
 <div class="card mx-auto show--card text-light">
   <h2 class="card-header text-light text-center show--car-head"><%= "Questions" %></h2>
@@ -39,30 +35,38 @@
     <tbody>
     <% @car.questions.each do |question| %>
       <br>
-      <tr>
-        <div class="card text-dark">
-          <h3><%= question.title %></h3>
-          <td><%= question.content %></td>
-          <br>
-          <div class="btn-group btn-group-toggle">
-            <div class="d-grid gap-2 d-md-block">
-              <td><%= link_to 'Edit', edit_car_question_path(question.car, question), class:"btn btn-outline-warning" %></td>
-              <td><%= link_to 'Delete', car_question_path(question.car, question), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger" %></td>
+        <div class="card w-85 text-dark mx-auto">
+          <h3>Topic: <%= question.title %></h3>
+          <p><%= question.content %></p>
+          <br><br>
+          <% if user_signed_in? and question.user_id == current_user.id %>
+            <div class="position-absolute bottom-0 end-0 d-grid gap-2 d-md-block btn-group-sm">
+              <td><%= link_to 'Edit', edit_car_question_path(question.car, question), class:"btn btn-warning" %></td>
+              <td><%= link_to 'Delete', car_question_path(question.car, question), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></td>
             </div>
-          </div>
-        </div>
-        <div class="card text-dark">
-          <h5>Answer</h5>
-          <% if question.answer %>
-            <td><%= question.answer %></td>
-          <% else %>
-            <td>This question hasn't been answered yet</td>
           <% end %>
         </div>
-          
-        </tr>
+        <br>
+        <div class="card w-85 text-dark mx-auto">
+          <h5>Answer</h5>
+          <% if question.answer %>
+            <p><%= question.answer %></p>
+          <% else %>
+            <p>This question hasn't been answered yet</p>
+          <% end %>
+          <% if user_signed_in? and @car.user_id == current_user.id %>
+            <div class="position-absolute bottom-0 end-0 d-grid gap-2 d-md-block btn-group-sm">
+              <td><%= link_to 'Edit', car_question_path(@car, question), class:"btn btn-warning" %></td>
+            </div>
+          <% end %>
+        </div>
       </br>
     <% end %>
     </tbody> 
-    <br/>
+  <br/>
+  </div>
+    <%= link_to "Doubts? Ask the seller", new_car_question_path(@car), class: "btn btn-primary d-block center-block" %>
+  </div>
+  <br><br>
+</div>
 <br>
