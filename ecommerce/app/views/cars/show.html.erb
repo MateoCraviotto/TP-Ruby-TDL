@@ -26,14 +26,34 @@
     <% end %>
     <br>
   </div>
-    
-<div class="container">
-<h3>Any questions?</h3>
-<%= link_to "Ask", new_car_question_path(@car), class: "btn btn-primary" %>
-<br/>
-<br/>
-<h3>All questions</h3> 
-<%= link_to "Questions", car_questions_path(@car), class:"btn btn-secondary" %>
-<br/>
-<br/>
 </div>
+
+<br>
+<div class="card mx-auto show--card text-light">
+  <h2 class="card-header text-light text-center show--car-head"><%= "Questions" %></h2>
+  <div class="container">
+    <tbody>
+    <% @car.questions.each do |question| %>
+      <br>
+      <tr>
+        <h3 class="text-light"><%= question.title %></h3>
+        <td><%= question.content %></td>
+        <br>
+        <td><%= link_to 'Edit', edit_car_question_path(question.car, question) %></td>
+        <td><%= link_to 'Delete', car_question_path(question.car, question), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <h5 class="text-light">Answer</h5>
+        <% if question.answer %>
+          <td><%= question.answer %></td>
+        <% else %>
+          <td>This question hasn't been answered yet</td>
+        <% end %>
+        </tr>
+      </br>
+    <% end %>
+    </tbody> 
+    <br/>
+    <br>
+  </div>
+  <%= link_to "Doubts? Ask the seller", new_car_question_path(@car), class: "btn btn-primary" %>
+</div>
+<br>
