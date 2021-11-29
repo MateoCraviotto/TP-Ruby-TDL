@@ -1,6 +1,11 @@
-<h1>Editing Question</h1>
-
 <%= render 'form', question: @question %>
 
-<%= link_to 'Show', car_question_path %> |
-<%= link_to 'Back', car_questions_path %>
+<%if false%>
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <% if false %>
+        <%= link_to 'Show', car_question_path, class:"btn btn-danger" %> 
+    <% end %>
+    <%= link_to 'Back', car_path(params[:car_id]), class:"btn btn-warning" %>
+</div>
+<%end%>

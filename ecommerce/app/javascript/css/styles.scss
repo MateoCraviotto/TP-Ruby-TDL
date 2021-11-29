@@ -208,6 +208,14 @@ nav {
     transform: translate(-50%, -50%);
 }
 
+.h-divider{
+    margin-top:5px;
+    margin-bottom:5px;
+    height:1px;
+    width:100%;
+    border-top:5px solid white;
+}
+
 body{
     background: url("background_image.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;

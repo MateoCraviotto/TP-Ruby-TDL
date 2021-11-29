@@ -27,7 +27,7 @@ class QuestionsController < ApplicationController
     @question = @car.questions.new(question_params.merge(user_id: current_user.id))
     respond_to do |format|
       if @question.save
-        format.html { redirect_to car_question_path(@car, @question), notice: "Question was successfully created." }
+        format.html { redirect_to car_path(@car), notice: "Question was successfully created." }
         format.json { render :show, status: :created, location: @question }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,9 +38,10 @@ class QuestionsController < ApplicationController
 
   # PATCH/PUT /questions/1 or /questions/1.json
   def update
+    @question.update(question_params)
     respond_to do |format|
       if @question.update(question_params)
-        format.html { redirect_to car_question_path(@car, @question), notice: "Question was successfully updated." }
+        format.html { redirect_to car_path(@car), notice: "Question was successfully updated." }
         format.json { render :show, status: :ok, location: @question }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -55,10 +56,6 @@ class QuestionsController < ApplicationController
       flash[:notice] = "Question was successfully destroyed."
       redirect_to car_path(@car)
     end
-  end
-
-  def answer(answer)
-    @question.answer = answer
   end
 
   def correct_user
