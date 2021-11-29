@@ -12,4 +12,10 @@ Rails.application.routes.draw do
   get "contact", to: "contact#index", as: :contact
 
   get "active_posts", to: "cars#active_posts"
+
+  get "cars/:car_id/questions/:id/answer", to: "questions#answer", as: :answer
+
+  post "cars/:car_id/questions/:id/answer", to: "questions#answer"
+  patch "cars/:car_id/questions/:id/answer", to: "questions#update"
+
 end

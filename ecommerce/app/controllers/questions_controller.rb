@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
-  before_action :set_question, only: %i[ show edit update destroy ]
-  before_action :set_car, except: %i[ index ]
+  before_action :set_question, only: %i[ show edit update destroy answer ]
+  before_action :set_car, except: %i[ index answer ]
+  before_action :correct_user, only: [:answer]
 
   # GET /questions or /questions.json
   def index
@@ -56,6 +57,15 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def answer(answer)
+    @question.answer = answer
+  end
+
+  def correct_user
+    current_car = current_user.cars.find_by(id: @question.car_id)
+    redirect_to cars_path, notice: "Not autorithized to answer this question." if current_car.nil?
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_question
@@ -68,6 +78,10 @@ class QuestionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def question_params
-      params.require(:question).permit(:title, :content)
+      if params.require(:question).permit(:answer)
+        params.require(:question).permit(:title, :content, :answer)
+      else 
+        params.require(:question).permit(:title, :content)
+      end
     end
 end
