@@ -44,33 +44,38 @@
       <br>
         <div class="card w-85 text-white bg-secondary">
           <h3 class="card-header text-center">TOPIC: <%= question.title %></h3>
-          <p><%= question.content %></p>
-          <br>
+          <div class="container"><p><%= question.content %></p></div>
+          
           <% if user_signed_in? and question.user_id == current_user.id %>
+            <br>
             <div class="position-absolute bottom-0 end-0 d-grid gap-2 d-md-block btn-group-sm">
-              <td><%= link_to 'Edit', edit_car_question_path(question.car, question), class:"btn btn-warning" %></td>
-              <td><%= link_to 'Delete', car_question_path(question.car, question), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></td>
+              <%= link_to 'Edit', edit_car_question_path(question.car, question), class:"btn btn-warning" %>
+              <%= link_to 'Delete', car_question_path(question.car, question), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
             </div>
           <% elsif user_signed_in? and question.answer == nil and @car.user_id == current_user.id%>
-              <div class="position-absolute bottom-0 end-0 d-grid gap-2 d-md-block btn-group-sm">
+            <br>
+            <div class="justify-content-md-end d-md-flex btn-group-sm">
               <%= link_to 'Answer', car_question_path(@car, question), class:"btn btn-success" %>
+            </div>
           <% end %>
         </div>
-        <br>
+        
         <% if question.answer %>
-          <div class="card w-85 text-white bg-success mx-auto">
+          <br>
+          <div class="card w-85 text-white bg-success">
             <h5 class="card-header text-center">ANSWER</h5>
-              <p><%= question.answer %></p>
+              <div class="container"><p><%= question.answer %></p></div>
             <% if user_signed_in? and @car.user_id == current_user.id %>
               <br>
               <div class="position-absolute bottom-0 end-0 d-grid gap-2 d-md-block btn-group-sm">
-                <td><%= link_to 'Edit', car_question_path(@car, question), class:"btn btn-warning" %></td>
+                <%= link_to 'Edit', car_question_path(@car, question), class:"btn btn-warning" %>
               </div>
             <% end %>
           </div>
         <% end %>
-        <br>
+        
         <% if question != @car.questions.last %>
+          <br>
           <div class="h-divider"></div>
         <%end%>
     <% end %>
