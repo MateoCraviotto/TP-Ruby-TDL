@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Questions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+        <td><%= question.title %></td>
+        <td><%= question.content %></td>
+        <td><%= question.user.username %></td>
+        <td><%= link_to 'Show', car_question_path(question.car, question) %></td>
+        <td><%= link_to 'Edit', edit_car_question_path(question.car, question) %></td>
+        <td><%= link_to 'Destroy', car_question_path(question.car, question), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Question', new_car_question_path %>

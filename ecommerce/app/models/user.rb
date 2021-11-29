@@ -8,6 +8,7 @@ class User < ApplicationRecord
   after_commit :add_default_avatar, on: %i[create update]
 
   has_many :cars
+  has_many :questions
 
   def avatar_thumbnail
     if avatar.attached?

@@ -1,0 +1,46 @@
+<%= form_with(model: [@car, @question]) do |form| %>
+  <% if question.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(question.errors.count, "error") %> prohibited this question from being saved:</h2>
+
+      <ul>
+        <% question.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="card">
+
+    <div class="card-header">
+      <h1 class="text-center text-dark">Tell us what you want to know</h1>
+    </div>
+
+    <div class="field">
+      <%= form.label "TOPIC"%>
+      <br>
+      <%= form.text_field :title%>
+    </div>
+
+    <div class="field text-dark">
+      <%= form.label "QUESTION" %>
+      <%= form.text_field :content %>
+    </div>
+
+    <%= form.hidden_field :user_id, value: current_user.id %>
+
+    <br>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <%= form.submit "Ask", class:"btn btn-primary"%>
+      <%= link_to 'Back', car_path(params[:car_id]), class:"btn btn-warning" %>
+    </div>
+
+    <% if false %>
+    <div class="actions">
+
+    </div>
+    <%end %>
+  </div>
+<% end %>
