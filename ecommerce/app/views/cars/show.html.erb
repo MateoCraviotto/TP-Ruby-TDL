@@ -20,9 +20,9 @@
           <a class="btn btn-secondary dropdown-toggle header--nav-item" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">PRICE</a>
           <ul class="dropdown-menu dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDarkDropdownMenuLink">
               <li><p class="dropdown-item">USD: <%=@car.price %></p></li>
-              <li><p class="dropdown-item">EUR: </p></li>
-              <li><p class="dropdown-item">ARS: </p></li>
-              <li><p class="dropdown-item">BRL: </p></li>
+              <li><p class="dropdown-item">EUR: <%=@car.exchange_price('EUR')%></p></li>
+              <li><p class="dropdown-item">ARS: <%=@car.exchange_price('ARS')%></p></li>
+              <li><p class="dropdown-item">BRL: <%=@car.exchange_price('BRL')%></p></li>
           </ul>
         </div>
       </div>
