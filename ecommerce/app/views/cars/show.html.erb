@@ -9,13 +9,7 @@
             <image src="<%= (url_for(@car.car_image)) %>" class="img-fluid show--car-image d-inline">
         <% end %>
       </div>
-      <div class="show--div-info-attributes">
-            MANUFACTURER: <%= @car.manufacturer %><br>
-            CAPACITY: <%= @car.capacity %><br>
-            CAR TYPE: <%= @car.car_type %><br>
-            CAR CLASS: <%= @car.car_class %><br>
-            BODY CAR TYPE: <%= @car.body %><br> 
-
+      <div class="show--div-info-attributes"> 
         <div class="dropdown btn-sm">
           <a class="btn btn-secondary dropdown-toggle header--nav-item" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">PRICE</a>
           <ul class="dropdown-menu dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDarkDropdownMenuLink">
@@ -25,6 +19,11 @@
               <li><p class="dropdown-item">BRL: <%=@car.exchange_price('BRL')%></p></li>
           </ul>
         </div>
+        MANUFACTURER: <%= @car.manufacturer %><br>
+        CAPACITY: <%= @car.capacity %><br>
+        CAR TYPE: <%= @car.car_type %><br>
+        CAR CLASS: <%= @car.car_class %><br>
+        BODY CAR TYPE: <%= @car.body %><br> 
       </div>
     </div>
   
