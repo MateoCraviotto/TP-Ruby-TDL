@@ -10,12 +10,21 @@
         <% end %>
       </div>
       <div class="show--div-info-attributes">
-            PRICE: <%= "$" + number_with_delimiter( @car.price, delimiter:".").to_s %><br>
             MANUFACTURER: <%= @car.manufacturer %><br>
             CAPACITY: <%= @car.capacity %><br>
             CAR TYPE: <%= @car.car_type %><br>
             CAR CLASS: <%= @car.car_class %><br>
             BODY CAR TYPE: <%= @car.body %><br> 
+
+        <div class="dropdown btn-sm">
+          <a class="btn btn-secondary dropdown-toggle header--nav-item" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">PRICE</a>
+          <ul class="dropdown-menu dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDarkDropdownMenuLink">
+              <li><p class="dropdown-item">USD: <%=@car.price %></p></li>
+              <li><p class="dropdown-item">EUR: </p></li>
+              <li><p class="dropdown-item">ARS: </p></li>
+              <li><p class="dropdown-item">BRL: </p></li>
+          </ul>
+        </div>
       </div>
     </div>
   
@@ -80,5 +89,6 @@
         <%end%>
     <% end %>
     </tbody>
+    <br>
 </div>
 <br>
