@@ -183,7 +183,7 @@ nav {
 .show--car-image {
     border-radius: 0.5em;
     box-shadow: 0px 0px 3px #000000;
-    vertical-align: center;
+    margin-top: 3em;
 }
 
 .show--car-head {
@@ -289,6 +289,21 @@ nav {
 
 .header--dropdown-menu {
     border-radius: 0.7em;
+}
+
+.car-show--table {
+    font-size: large;
+    color: white !important;
+    margin-bottom: 0;
+}
+
+.car-show--table-labels {
+    color: rgb(214, 214, 214) !important;
+}
+
+.car-show--table-edit-btn {
+    color: rgb(230, 230, 230) !important;
+    font-size: small;
 }
 
 body{

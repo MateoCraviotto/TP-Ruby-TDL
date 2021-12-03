@@ -1,39 +1,70 @@
 <p id="notice"><%= notice %></p>
 
-<div class="card mx-auto show--card text-light">
+<div class="card mx-auto text-light show--card">
   <h2 class="card-header text-light text-center show--car-head"><%= @car.car_model %></h2>
   <div class="card-body">
     <div class="d-inline-block show--div-info">
-      <div class="d-inline-block show--div-info-image" >
-        <% if @car.car_image.attached? %>
-            <image src="<%= (url_for(@car.car_image)) %>" class="img-fluid show--car-image d-inline">
-        <% end %>
-      </div>
-      <div class="show--div-info-attributes">
-            PRICE: <%= "$" + number_with_delimiter( @car.price, delimiter:".").to_s %><br>
-            MANUFACTURER: <%= @car.manufacturer %><br>
-            CAPACITY: <%= @car.capacity %><br>
-            CAR TYPE: <%= @car.car_type %><br>
-            CAR CLASS: <%= @car.car_class %><br>
-            BODY CAR TYPE: <%= @car.body %><br> 
-      </div>
+
+      <div class="row">
+        <div class="col-4 text-center">
+          <image src="<%= (url_for(@car.car_image)) %>" class="img-fluid show--car-image">
+        </div>
+        <div class="col col-form-label">
+          <table class="table car-show--table">
+            <tr>
+              <td><div class="field form-group"><label class="small"><p class="car-show--table-labels d-inline">Price</p></label></div></td>
+              <td><%= "$" + number_with_delimiter( @car.price, delimiter:".").to_s %></td>
+            </tr>
+            <tr>
+              <td><div class="field form-group"><label class="small"><p class="car-show--table-labels d-inline">Manufacturer</p></label></div></td>
+              <td><%= @car.manufacturer %></td>
+            </tr>
+            <tr>
+              <td><div class="field form-group"><label class="small"><p class="car-show--table-labels d-inline">Capacity</p></label></div></td>
+              <td><%= @car.capacity %></td>
+            </tr>
+            <tr>
+              <td><div class="field form-group"><label class="small"><p class="car-show--table-labels d-inline">Car class</p></label></div></td>
+              <td><%= @car.car_class %></td>
+            </tr>
+            <tr>
+              <td><div class="field form-group"><label class="small"><p class="car-show--table-labels d-inline">Car type</p></label></div></td>
+              <td><%= @car.car_type %></td>
+            </tr>
+            <tr>
+              <td><div class="field form-group"><label class="small"><p class="car-show--table-labels d-inline">Body car type</p></label></div></td>
+              <td><%= @car.body %></td>
+            </tr>
+
+            <% if @is_user_signed_in_the_car_owner %>
+              <tr class="borderless-cell text-end">
+                <td></td>
+                <td>
+                  <div class="d-inline-block text-center">
+                    <div class="d-inline"><%= link_to "EDIT", edit_car_path(@car), class:"btn btn-warning" %></div><br>
+                    <p class="d-inline car-show--table-edit-btn">This is your post, edit it here.</p>
+                  </div>
+                </td>
+              </tr>
+            <% elsif user_signed_in? %>
+              <tr class="borderless-cell text-end">
+                  <td></td>
+                  <td>
+                    <div class="d-inline-block text-center">
+                      <div class="d-inline"><%= link_to "Ask the seller", new_car_question_path(@car), class: "btn btn-primary" %></div><br>
+                      <p class="d-inline car-show--table-edit-btn">Any doubts?</p>
+                    </div>
+                  </td>
+              </tr>
+            <% end %>
+
+          </table>
+          
+        </div>
+		  </div>
     </div>
-  
-    <br><br>
-    <% if user_signed_in? and @car.user_id == current_user.id %>
-      Hey, this is your post, you can edit it from here:&nbsp &nbsp &nbsp
-      <div class="d-inline"><%= link_to "EDIT", edit_car_path(@car), class:"btn btn-warning" %></div>
-    <% end %>
-    <br>
   </div>
 </div>
-<br>
-
-<% if user_signed_in? and @car.user_id != current_user.id %>
-  <div class="d-grid gap-2 col-6 mx-auto">
-    <%= link_to "Doubts? Ask the seller", new_car_question_path(@car), class: "btn btn-primary" %>
-  </div>
-<% end %>
 
 <br>
 <div class="card mx-auto show--card text-light">
@@ -46,7 +77,7 @@
           <h3 class="card-header text-center">TOPIC: <%= question.title %></h3>
           <div class="container"><p><%= question.content %></p></div>
           
-          <% if user_signed_in? and question.user_id == current_user.id %>
+          <% if user_signed_in? && question.user_id == current_user.id %>
             <br>
             <div class="position-absolute bottom-0 end-0 d-grid gap-2 d-md-block btn-group-sm">
               <%= link_to 'Edit', edit_car_question_path(question.car, question), class:"btn btn-warning" %>
@@ -65,7 +96,7 @@
           <div class="card w-85 text-white bg-success">
             <h5 class="card-header text-center">ANSWER</h5>
               <div class="container"><p><%= question.answer %></p></div>
-            <% if user_signed_in? and @car.user_id == current_user.id %>
+            <% if user_signed_in? && @car.user_id == current_user.id %>
               <br>
               <div class="position-absolute bottom-0 end-0 d-grid gap-2 d-md-block btn-group-sm">
                 <%= link_to 'Edit', car_question_path(@car, question), class:"btn btn-warning" %>

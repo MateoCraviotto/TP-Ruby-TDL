@@ -34,6 +34,7 @@ class CarsController < ApplicationController
 
   # GET /cars/1 or /cars/1.json
   def show
+    @is_user_signed_in_the_car_owner = user_signed_in? && (@car.user_id == current_user.id)
   end
 
   # GET /cars/new
