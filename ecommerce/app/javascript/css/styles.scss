@@ -216,6 +216,40 @@ nav {
     border-top:5px solid white;
 }
 
+.question-form--card-div {
+    border-radius: 1em;
+    box-shadow: 0px 0px 6px #000000;
+}
+
+.questions-form--submit-div {
+    width: 92%;
+}
+
+.question-form--btn {
+    border-radius: 12px;
+}
+
+.question-form--text-area {
+    background-color: #f8f9fa;
+}
+
+.question-form--text-area:focus {
+    background-color: #f8f9fa;
+}
+
+.question-show--card-div {
+    border-radius: 1em;
+    box-shadow: 0px 0px 6px #000000;
+}
+
+.question-show--text-area {
+    background-color: white !important;
+}
+
+.answer-form--btn {
+    border-radius: 12px;
+}
+
 body{
     background: url("background_image.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;

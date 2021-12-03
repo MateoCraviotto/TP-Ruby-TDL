@@ -15,6 +15,7 @@
           <a class="nav-link dropdown-toggle header--nav-item" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
           <ul class="dropdown-menu dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDarkDropdownMenuLink">
             <% if user_signed_in? %>
+              <li> <%= link_to current_user.username, "#", class:"dropdown-item disabled text-center" %> </li>
               <li><%= link_to "Active posts", active_posts_path, class:"dropdown-item" %></li>
               <li><hr class="dropdown-divider"></li>
               <li><%= link_to "Profile", current_user, class:"dropdown-item" %></li>

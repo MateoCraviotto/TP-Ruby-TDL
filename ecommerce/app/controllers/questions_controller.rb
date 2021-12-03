@@ -10,6 +10,7 @@ class QuestionsController < ApplicationController
 
   # GET /questions/1 or /questions/1.json
   def show
+    @is_user_signed_in_the_car_owner = user_signed_in? and @car.user_id == current_user.id
   end
 
   # GET /questions/new

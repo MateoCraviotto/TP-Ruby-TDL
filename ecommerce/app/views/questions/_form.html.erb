@@ -11,36 +11,31 @@
     </div>
   <% end %>
 
-  <div class="card">
+  <div class="card question-form--card-div">
 
-    <div class="card-header">
-      <h1 class="text-center text-dark">Tell us what you want to know</h1>
+    <h2 class="card-header text-dark border-0">Ask a question</h2>
+    <h6 class="card-header text-dark small text-muted">Ask anything about the product you would to know by filling this form</h6>
+
+    <div class="field form-group col-10 mx-auto">
+      <br><%= form.label "TOPIC", class:"col-form-label" %><br>
+      <%= form.text_field :title, class:"form-control form-control-lg field", required: true %>
     </div>
 
-    <div class="container field">
-      <%= form.label "TOPIC"%>
-      <br>
-      <%= form.text_field :title%>
-    </div>
-
-    <div class="container field text-dark">
-      <%= form.label "QUESTION" %>
-      <%= form.text_field :content %>
+    <div class="field form-group col-10 mx-auto">
+      <%= form.label "QUESTION", class:"col-form-label" %><br>
+      <%= form.text_area :content, class:"form-control field question-form--text-area", required: true %>
     </div>
 
     <%= form.hidden_field :user_id, value: current_user.id %>
 
-    <br>
+    &nbsp <br>
 
-    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-      <%= form.submit "Ask", class:"btn btn-primary"%>
-      <%= link_to 'Back', car_path(params[:car_id]), class:"btn btn-warning" %>
+    <div class="actions form-group text-end questions-form--submit-div">
+      <%= form.submit "Ask", class:"btn btn-primary btn-lg question-form--btn"%> &nbsp &nbsp
+      <%= link_to 'Back', car_path(params[:car_id]), class:"btn btn-warning btn-lg question-form--btn" %>
     </div>
 
-    <% if false %>
-    <div class="actions">
-
-    </div>
-    <%end %>
+    <br> &nbsp
+    
   </div>
 <% end %>
