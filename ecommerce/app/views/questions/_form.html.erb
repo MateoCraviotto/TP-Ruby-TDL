@@ -1,29 +1,25 @@
-<%= form_with(model: [@car, @question]) do |form| %>
-  <% if question.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(question.errors.count, "error") %> prohibited this question from being saved:</h2>
+<div class="card-body">
+  <%= form_with(model: [@car, @question]) do |form| %>
+    <% if question.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(question.errors.count, "error") %> prohibited this question from being saved:</h2>
 
-      <ul>
-        <% question.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="card question-form--card-div">
-
-    <h2 class="card-header text-dark border-0">Ask a question</h2>
-    <h6 class="card-header text-dark small text-muted">Ask anything about the product you would to know by filling this form</h6>
+        <ul>
+          <% question.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
     <div class="field form-group col-10 mx-auto">
-      <br><%= form.label "TOPIC", class:"col-form-label" %><br>
+      <%= form.label "TOPIC", class:"col-form-label" %><br>
       <%= form.text_field :title, class:"form-control form-control-lg field", required: true %>
     </div>
 
     <div class="field form-group col-10 mx-auto">
       <%= form.label "QUESTION", class:"col-form-label" %><br>
-      <%= form.text_area :content, class:"form-control field question-form--text-area", required: true %>
+      <%= form.rich_text_area :content, class:"form-control field question-form--text-area", required: true %>
     </div>
 
     <%= form.hidden_field :user_id, value: current_user.id %>
@@ -31,11 +27,9 @@
     &nbsp <br>
 
     <div class="actions form-group text-end questions-form--submit-div">
-      <%= form.submit "Ask", class:"btn btn-primary btn-lg question-form--btn"%> &nbsp &nbsp
+      <%= form.submit "Post Question", class:"btn btn-primary btn-lg question-form--btn"%> &nbsp &nbsp
       <%= link_to 'Back', car_path(params[:car_id]), class:"btn btn-warning btn-lg question-form--btn" %>
     </div>
-
-    <br> &nbsp
-    
-  </div>
-<% end %>
+      
+  <% end %>
+</div>

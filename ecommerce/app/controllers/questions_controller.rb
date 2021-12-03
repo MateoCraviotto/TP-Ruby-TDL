@@ -26,6 +26,7 @@ class QuestionsController < ApplicationController
   # POST /questions or /questions.json
   def create
     @question = @car.questions.new(question_params.merge(user_id: current_user.id))
+
     respond_to do |format|
       if @question.save
         format.html { redirect_to car_path(@car), notice: "Question was successfully created." }

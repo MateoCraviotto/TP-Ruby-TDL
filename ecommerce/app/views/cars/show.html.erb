@@ -52,7 +52,7 @@
               <%= link_to 'Edit', edit_car_question_path(question.car, question), class:"btn btn-warning" %>
               <%= link_to 'Delete', car_question_path(question.car, question), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
             </div>
-          <% elsif user_signed_in? and question.answer == nil and @car.user_id == current_user.id%>
+          <% elsif user_signed_in? and @car.user_id == current_user.id and question.answer.nil? %>
             <br>
             <div class="justify-content-md-end d-md-flex btn-group-sm">
               <%= link_to 'Answer', car_question_path(@car, question), class:"btn btn-success" %>
@@ -60,7 +60,7 @@
           <% end %>
         </div>
         
-        <% if question.answer %>
+        <% if !question.answer.nil? %>
           <br>
           <div class="card w-85 text-white bg-success">
             <h5 class="card-header text-center">ANSWER</h5>

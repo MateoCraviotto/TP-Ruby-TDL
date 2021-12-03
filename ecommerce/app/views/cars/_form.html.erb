@@ -13,7 +13,7 @@
     <% end %>
 
     <div class="field form-group col-10 mx-auto">
-      <%= form.label "Car image" %>
+      <%= form.label "Car image", class:"col-form-label" %>
       <%= form.file_field :car_image, required: true %>
     </div>
 
@@ -48,7 +48,7 @@
     </div>
 
     <div class="field form-group col-10 mx-auto">
-      <%= form.label :price %>
+      <%= form.label :price, class:"col-form-label" %>
       <%= form.number_field :price, required: true, min:"0", max:(2**63).to_s %>
     </div>
     

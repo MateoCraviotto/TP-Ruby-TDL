@@ -1,12 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <div class="card question-show--card-div">
-  <h2 class="card-header text-dark text-center border-0"><%=@question.title %></h2>
+  <h2 class="card-header text-dark text-center border-0">Topic: "<%=@question.title %>"</h2>
   <h3 class="card-header small text-dark text-muted text-center">Question from <i><%=@question.user.username%></i></h3>
   
   <div class="container text-dark col-10 mx-auto">
     <br>
-    <textarea readonly class="form-control field question-show--text-area"> <%= @question.content.to_plain_text %> </textarea>
+    <div class="field text-dark">
+        <label class="col-form-label">QUESTION</label>
+    </div>
+    <div class="field text-dark form-control question-show--question-content-div">
+        <%= @question.content %>
+    </div>
   </div>
 
   <div class="container text-dark col-10 mx-auto">

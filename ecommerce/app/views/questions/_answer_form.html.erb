@@ -9,14 +9,14 @@
       </ul>
       </div>
     <% end %>
-      
+    
     <%= form.hidden_field :title, value: @question.title %>
     <%= form.hidden_field :content, value: @question.content %>
     <%= form.hidden_field :user_id, value: @question.user_id %>
     
     <div class="field text-dark">
-        <br><%= form.label "ANSWER" %><br>
-        <%= form.text_area :answer, class:"form-control field question-form--text-area", required: true %>
+        <br><%= form.label "ANSWER", class:"col-form-label" %> <i class="text-muted">(write your answer here)</i><br>
+        <%= form.rich_text_area :answer, class:"form-control field question-form--text-area", required: true %>
     </div><br>
 
     <div class="actions form-group text-end">
