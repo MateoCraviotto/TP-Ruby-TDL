@@ -1,0 +1,81 @@
+<div>
+    <br>
+    <h2 class="card-header text-light text-center border-0"><%= "Questions" %></h2>
+
+    <tbody>
+      <% @car.questions.each do |question| %>
+        <br>
+        <div class="card text-white bg-secondary car-show-details--question-card">
+            <div class="card-header">
+                <div>
+                    <h3 class="text-start d-inline">
+                        <div class="field form-group d-inline">
+                            <label><p class="car-show--table-labels d-inline">Topic:</p></label>
+                        </div>
+                        <%= question.title %>
+                    </h3>
+                    <% if is_user_signed_in_the_question_owner(question) %>
+                        <% if !question_is_answered(question) %>
+                            <div class="d-inline text-end car-show--question-btns-div">
+                                <%= link_to image_tag("pencil.png", class:"car-show--edit-question-btn"), edit_car_question_path(question.car, question), title:"Edit question" %> &nbsp &nbsp
+                                <%= link_to image_tag("trash.png", class:"car-show--edit-question-btn"), car_question_path(question.car, question), method: :delete, data: { confirm: 'Are you sure?' }, title:"Delete question" %>
+                            </div>
+                        <% else %>
+                            <div class="d-inline text-end car-show--question-btns-div">
+                                <%= link_to image_tag("trash.png", class:"car-show--edit-question-btn"), car_question_path(question.car, question), method: :delete, data: { confirm: 'Are you sure?' }, title:"Delete question" %>
+                            </div>
+                        <% end %>
+                    <% elsif is_user_signed_in_car_owner_and_able_to_answer(question) %>
+                        <div class="d-inline text-end car-show--question-btns-div">
+                            <%= link_to image_tag("message.png", class:"car-show--answer-question-image") + "Answer", car_question_path(@car, question), class:"btn btn-light car-show--answer-question-btn small", title:"Answer question" %> &nbsp &nbsp 
+                            <%= link_to image_tag("trash.png", class:"car-show--edit-question-btn"), car_question_path(question.car, question), method: :delete, data: { confirm: 'Are you sure?' }, title:"Delete question" %>
+                        </div>
+                    <% elsif is_user_signed_in_car_owner_and_already_answered(question) %>
+                        <div class="d-inline text-end car-show--question-btns-div">
+                            <%= link_to image_tag("trash.png", class:"car-show--edit-question-btn"), car_question_path(question.car, question), method: :delete, data: { confirm: 'Are you sure?' }, title:"Delete question" %>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+
+            <div class="container">
+                <p><%= question.content %></p>
+                <h6 class="text-light text-end small car-show--question-user-h6"><i>Asked by <%= question.user.username %>, <%= question.created_at.strftime("%d/%m/%Y") %></i></h6>
+            </div>
+        </div>
+
+        <% if question_is_answered(question) %>
+            <div class="card text-white car-show-details--answer-card">
+                <div class="card-header">
+                    <h3 class="text-start d-inline">
+                        <div class="field form-group d-inline">
+                            <label><p class="car-show--table-labels d-inline">Answer:</p></label>
+                        </div>
+                    </h3>
+                
+                    <% if is_user_signed_in_car_owner_and_already_answered(question) %>
+                        <div class="d-inline text-end car-show--question-btns-div">
+                            <%= link_to image_tag("pencil.png", class:"car-show--edit-question-btn"), car_question_path(@car, question), title:"Edit answer" %>
+                        </div>
+                    <% end %>
+                </div>
+               
+                <div class="container">
+                    <p><%= question.answer %></p>
+                    <h6 class="text-light text-end small car-show--question-user-h6"><i>Answered by <%= @car.user.username %> </i></h6>
+                </div>
+            </div>
+            <br>
+        <% else %>
+            <br><br>
+        <% end %> 
+    <% end %>
+
+    <% if @car.questions.count == 0 %>
+        <br>
+        <p class="text-center lead">No one has asked anything in this post yet. Be the first one!</p>
+        <br><br>
+    <% end %>
+
+    </tbody>
+</div>

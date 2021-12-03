@@ -2,6 +2,7 @@ class QuestionsController < ApplicationController
   before_action :set_question, only: %i[ show edit update destroy answer ]
   before_action :set_car, except: %i[ index answer ]
   before_action :correct_user, only: [:answer]
+  before_action :authenticate_user!, only: [:new]
 
   # GET /questions or /questions.json
   def index

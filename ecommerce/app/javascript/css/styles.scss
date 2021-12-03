@@ -76,6 +76,10 @@
     margin-left: 3em;
 }
 
+.contact--button:hover {
+    box-shadow: 0px 0px 12px #000000;
+}
+
 .new-session--checkbox-label {
     user-select: none;
 }
@@ -173,7 +177,6 @@ nav {
 }
 
 .show--card {
-    border-radius: 1em;
     background:rgba(95, 95, 95, 0.877);
     border-radius: 1.5em;
     box-shadow: 0px 0px 10px #000000;
@@ -187,7 +190,8 @@ nav {
 }
 
 .show--car-head {
-    color: rgb(255, 192, 192);
+    color: rgb(255, 255, 255) !important;
+    font-weight: bold;
 }
 
 .show--div-info {
@@ -304,6 +308,65 @@ nav {
 .car-show--table-edit-btn {
     color: rgb(230, 230, 230) !important;
     font-size: small;
+}
+
+.car-show--details-btn {
+    border-radius: 10px;
+}
+
+.car-show--card-divider {
+    color: black;
+    margin: 0;
+}
+
+.car-show--question-btns-div {
+    float: right;
+    margin-top: 0.2em;
+}
+
+.car-show--edit-question-btn {
+    width: 20px;
+}
+
+.car-show--answer-question-image {
+    width: 20px;
+    margin-right: 10px;
+}
+.car-show--answer-question-btn {
+    border-radius: 10px;
+}
+
+.car-show--answer-question-btn:hover {
+    box-shadow: 0px 0px 6px #000000;
+}
+
+.car-show--edit-question-btn:hover {
+    -webkit-filter: drop-shadow(0px 0px 3px rgb(0, 0, 0) );
+    filter: drop-shadow(0px 0px 3px rgb(0, 0, 0));
+}
+
+.car-show-details--question-card {
+    border-top-left-radius: 1.5em;
+    border-top-right-radius: 1.5em;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin: 0.5em;
+    margin-bottom: 0;
+}
+
+.car-show-details--answer-card {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 1.5em;
+    border-bottom-right-radius: 1.5em;
+    margin: 0.5em;
+    margin-top: 0;
+    background-color: rgb(93, 172, 80);
+}
+
+.car-show--question-user-h6 {
+    margin: 0.5em;
+    margin-top: 0;
 }
 
 body{
