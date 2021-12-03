@@ -47,7 +47,7 @@
     width: 150px;
 }
 
-.home--link, .about--link, .catlogue--car-model-link{
+.home--link, .about--link, .catalogue--car-model-link{
     text-decoration: none;
     color: rgb(255, 192, 192);
 }
@@ -60,7 +60,7 @@
     -webkit-font-smoothing: antialiased;
 }
 
-.catlogue--car-model-link:hover {
+.catalogue--car-model-link:hover {
     color: rgb(255, 192, 192);
     text-shadow: 0px 0px 5px red;
 }
@@ -252,6 +252,35 @@ nav {
 
 .question-show--question-content-div {
     margin-top: 0;
+}
+
+.user-show--card-div, .user-edit--card-div, .user-sign-up--card-div, .user-sign-in--card-div {
+    border-radius: 1em;
+    box-shadow: 0px 0px 6px #000000;
+}
+
+.user-show--details {
+    font-size: x-large;
+}
+
+.user-show--details-div {
+    border-radius: 0.8em;
+}
+
+.user-show--avatar, .user-edit--avatar {
+    border-radius: 2em;
+}
+
+.borderless-cell {
+    border: 1px solid Transparent !important;
+} 
+
+.user-show--edit-btn, .user-edit--btn, .user-sign-up--btn, .user-sign-in--btn {
+    border-radius: 10px;
+}
+
+.user-sign-up--btn-lg, .user-sign-in--btn-lg {
+    border-radius: 12px;
 }
 
 body{

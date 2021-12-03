@@ -5,7 +5,7 @@
     <div class="col ">
         <%= link_to image_tag(url_for(cars[0].car_image), class:"img-fluid car-catalogue--car-image"), car_path(id: cars[0].id) %>
         <h6 class="text-white text-uppercase d-block small text-center car-catalogue--header"> <%= cars[0].manufacturer %> </h6>
-        <h4 class="text-white text-uppercase text-center"> <%= link_to cars[0].car_model, car_path(id: cars[0].id), class:"catlogue--car-model-link" %> </h4>
+        <h4 class="text-white text-uppercase text-center"> <%= link_to cars[0].car_model, car_path(id: cars[0].id), class:"catalogue--car-model-link" %> </h4>
         <h5 class="text-white text-uppercase text-center car-catalogue--header"><%= "$" + number_with_delimiter( cars[0].price, delimiter:".").to_s %></h5>
         <%= link_to "BUY", "#", class:"btn btn-success btn-buy d-block" %>
     </div>
@@ -17,7 +17,7 @@
     <div class="col ">
         <%= link_to image_tag(url_for(cars[1].car_image), class:"img-fluid car-catalogue--car-image"), car_path(id: cars[1].id) %>
         <h6 class="text-white text-uppercase d-block small text-center car-catalogue--header"> <%= cars[1].manufacturer %> </h6>
-        <h4 class="text-white text-uppercase text-center"> <%= link_to cars[1].car_model, car_path(id: cars[1].id), class:"catlogue--car-model-link" %> </h4>
+        <h4 class="text-white text-uppercase text-center"> <%= link_to cars[1].car_model, car_path(id: cars[1].id), class:"catalogue--car-model-link" %> </h4>
         <h5 class="text-white text-uppercase text-center car-catalogue--header"><%= "$" + number_with_delimiter( cars[1].price, delimiter:".").to_s %></h5>
         <%= link_to "BUY", "#", class:"btn btn-success btn-buy d-block" %>
     </div>
@@ -29,7 +29,7 @@
     <div class="col ">
         <%= link_to image_tag(url_for(cars[2].car_image), class:"img-fluid car-catalogue--car-image"), car_path(id: cars[2].id) %>
         <h6 class="text-white text-uppercase d-block small text-center car-catalogue--header"> <%= cars[2].manufacturer %> </h6>
-        <h4 class="text-white text-uppercase text-center"> <%= link_to cars[2].car_model, car_path(id: cars[2].id), class:"catlogue--car-model-link" %> </h4>
+        <h4 class="text-white text-uppercase text-center"> <%= link_to cars[2].car_model, car_path(id: cars[2].id), class:"catalogue--car-model-link" %> </h4>
         <h5 class="text-white text-uppercase text-center car-catalogue--header"><%= "$" + number_with_delimiter( cars[2].price, delimiter:".").to_s %></h5>
         <%= link_to "BUY", "#", class:"btn btn-success btn-buy d-block" %>
     </div>
@@ -41,7 +41,7 @@
     <div class="col ">
         <%= link_to image_tag(url_for(cars[3].car_image), class:"img-fluid car-catalogue--car-image"), car_path(id: cars[3].id) %>
         <h6 class="text-white text-uppercase d-block small text-center car-catalogue--header"> <%= cars[3].manufacturer %> </h6>
-        <h4 class="text-white text-uppercase text-center"> <%= link_to cars[3].car_model, car_path(id: cars[3].id), class:"catlogue--car-model-link" %> </h4>
+        <h4 class="text-white text-uppercase text-center"> <%= link_to cars[3].car_model, car_path(id: cars[3].id), class:"catalogue--car-model-link" %> </h4>
         <h5 class="text-white text-uppercase text-center car-catalogue--header"><%= "$" + number_with_delimiter( cars[3].price, delimiter:".").to_s %></h5>
         <%= link_to "BUY", "#", class:"btn btn-success btn-buy d-block" %>
     </div>
