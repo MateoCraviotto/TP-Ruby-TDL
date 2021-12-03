@@ -6,16 +6,23 @@
   <p class="text-center lead"><small>These are the cars your are currently selling.</small></p>
   <br><br>
   
-  <% @array_four_cars.each_with_index do |four_cars, j| %>
+ <% unless @array_four_cars.count == 0 %>
+    <% @array_four_cars.each_with_index do |four_cars, j| %>
     
-    <%= render partial: 'active_sales_posts', locals: {cars: four_cars} %>
+      <%= render partial: 'active_sales_posts', locals: {cars: four_cars} %>
 
-    <% if j != @last_index %>
-      <br><br><br>
-    <% else %>
-      <br>
+      <% if j != @last_index %>
+        <br><br><br>
+      <% else %>
+        <br>
+      <% end %>
     <% end %>
+
+  <% else %>
+    <p class="text-center lead">You currently have no cars on sale.</p>
+    <br><br>
   <% end %>
+
 </div>
 
 <br><br>

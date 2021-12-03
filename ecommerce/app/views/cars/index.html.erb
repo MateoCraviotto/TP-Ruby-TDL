@@ -5,16 +5,22 @@
   <h1 class="text-center">Catalogue</h1>
   <p class="text-center lead"><small>Happy shopping!</small></p>
   <br><br>
-  
-  <% @array_four_cars.each_with_index do |four_cars, j| %>
-    
-    <%= render partial: 'car_catalogue', locals: {cars: four_cars} %>
 
-    <% if j != @last_index %>
-      <br><br><br>
-    <% else %>
-      <br>
+  <% unless @array_four_cars.count == 0 %>
+    <% @array_four_cars.each_with_index do |four_cars, j| %>
+      
+      <%= render partial: 'car_catalogue', locals: {cars: four_cars} %>
+
+      <% if j != @last_index %>
+        <br><br><br>
+      <% else %>
+        <br>
+      <% end %>
     <% end %>
+
+  <% else %>
+    <p class="text-center lead">We are sorry, but currently there are no cars on sale.</p>
+    <br><br>
   <% end %>
 </div>
 
