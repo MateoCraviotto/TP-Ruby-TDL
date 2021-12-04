@@ -10,11 +10,6 @@
             <h6 class="text-white text-uppercase d-block small text-center car-catalogue--header"> <%= car.manufacturer %> </h6>
             <h4 class="text-white text-uppercase text-center"> <%= link_to car.car_model, car_path(id: car.id), class:"catalogue--car-model-link" %> </h4>
             <h5 class="text-white text-uppercase text-center car-catalogue--header"><%= "$" + number_with_delimiter( car.price, delimiter:".").to_s %></h5>
-            
-            <div class="d-block">
-              <%= link_to "EDIT", edit_car_path(id: car.id), class:"btn btn-warning d-inline active-posts--btn-edit-left" %>
-              <%= link_to "DELETE", car, method: :delete, data: { confirm: 'Are you certain you want to delete this car post?' }, class:"btn btn-danger d-inline active-posts--btn-delete-right"%>
-            </div>
           </div>
 
         <% else %>

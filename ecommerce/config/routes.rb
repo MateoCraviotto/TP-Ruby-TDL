@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   get "purchase_history", to: "users#purchase_history"
   get "sale_history", to: "users#sale_history"
 
+  get "cars/buy/:car_id", to: "cars#buy", as: :buy
+  get "cars/buy/confirm_purchase/:car_id", to: "cars#confirm_purchase", as: :confirm_purchase
+
   #no tocar
   get "cars/:car_id/questions/:id/answer", to: "questions#answer", as: :answer
   post "cars/:car_id/questions/:id/answer", to: "questions#answer"

@@ -1,7 +1,7 @@
 module CarsHelper
 
     def is_user_signed_in_car_owner(car)
-        user_signed_in? && (car.user_id == current_user.id)
+        return user_signed_in? && (car.user_id == current_user.id)
     end
 
     def is_user_signed_in_the_question_owner(question)

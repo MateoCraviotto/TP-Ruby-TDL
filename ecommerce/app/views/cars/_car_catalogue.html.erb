@@ -14,7 +14,7 @@
           <% if is_user_signed_in_car_owner(car) %>
             <%= link_to "BUY", "", class:"btn btn-success btn-buy btn-buy-disabled d-block", data: { confirm: "You cannot buy from your own post." } %>
           <% else %>
-            <%= link_to "BUY", "", class:"btn btn-success btn-buy d-block" %>
+            <%= link_to "BUY", buy_path(car.id), class:"btn btn-success btn-buy d-block" %>
           <% end %>
         </div>
 

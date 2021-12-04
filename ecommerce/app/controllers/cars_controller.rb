@@ -5,14 +5,7 @@ class CarsController < ApplicationController
 
   # GET /cars or /cars.json
   def index
-    @cars_unfiltered = Car.all
-    @cars = []
-
-    @cars_unfiltered.each do |car|
-      if car.is_for_sale
-        @cars.push(car)
-      end
-    end
+    @cars = Car.all.where(is_for_sale: true)
 
     i = 0
     @array_four_cars = []
@@ -49,6 +42,22 @@ class CarsController < ApplicationController
 
   # GET /cars/1/edit
   def edit
+  end
+
+  def buy
+    car_id = buy_path().gsub( buy_path().tr("0-9","") , "").to_i
+    @car = Car.find_by_id(car_id)
+  end
+
+  def confirm_purchase
+    car_id = confirm_purchase_path().gsub( confirm_purchase_path().tr("0-9","") , "").to_i
+    @car = Car.find_by_id(car_id)
+
+    @car.update(is_for_sale: false)
+    @car.update(buyer_id: current_user.id)
+    @car.update(purchased_at: Time.current)
+
+    redirect_to cars_path(), notice: "Car was successfully purchased."
   end
 
   # POST /cars or /cars.json
