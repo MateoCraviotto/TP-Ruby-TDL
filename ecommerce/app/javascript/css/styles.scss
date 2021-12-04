@@ -376,6 +376,46 @@ nav {
     margin-top: 0;
 }
 
+.active_sales--delete_post-image, .active_sales--edit_post-image, 
+.car-show--edit-image, .car-show--question-image {
+    width: 18px;
+    margin-right: 7px;
+    margin-bottom: 3px;
+}
+
+.user-show--edit-profile-image {
+    width: 18px;
+    margin-right: 7px;
+    margin-bottom: 4px;
+}
+
+.delete-account--image {
+    width: 22px;
+    margin-right: 7px;
+    margin-bottom: 4px;
+}
+
+.buy-btn--image {
+    width: 25px;
+    margin-right: 7px;
+    margin-bottom: 3px;
+}
+
+.car-show--btn-buy {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.question--back-btn-image {
+    width: 30px;
+    padding: 0;
+    margin-bottom: 2px;
+}
+
+.answer-form--back-btn {
+    padding: 0.45rem 0.8rem;
+}
+
 body{
     background: url("background_image.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;

@@ -12,8 +12,8 @@
             <h5 class="text-white text-uppercase text-center car-catalogue--header"><%= "$" + number_with_delimiter( car.price, delimiter:".").to_s %></h5>
             
             <div class="d-block">
-              <%= link_to "EDIT", edit_car_path(id: car.id), class:"btn btn-warning d-inline active-posts--btn-edit-left" %>
-              <%= link_to "DELETE", car, method: :delete, data: { confirm: 'Are you certain you want to delete this car post?' }, class:"btn btn-danger d-inline active-posts--btn-delete-right"%>
+              <%= link_to image_tag("Icons/edit_page_black.png", class:"active_sales--delete_post-image") + "EDIT", edit_car_path(id: car.id), class:"btn btn-warning d-inline active-posts--btn-edit-left" %>
+              <%= link_to image_tag("Icons/ex_white.png", class:"active_sales--edit_post-image") + "DELETE", car, method: :delete, data: { confirm: 'Are you certain you want to delete this car post?' }, class:"btn btn-danger d-inline active-posts--btn-delete-right"%>
             </div>
           </div>
 

@@ -12,9 +12,9 @@
           <h5 class="text-white text-uppercase text-center car-catalogue--header"><%= "$" + number_with_delimiter( car.price, delimiter:".").to_s %></h5>
           
           <% if is_user_signed_in_car_owner(car) %>
-            <%= link_to "BUY", "", class:"btn btn-success btn-buy btn-buy-disabled d-block", data: { confirm: "You cannot buy from your own post." } %>
+            <%= link_to image_tag("Icons/shopping_cart_white.png", class:"buy-btn--image") + "BUY", "", class:"btn btn-success btn-buy btn-buy-disabled d-block", data: { confirm: "You cannot buy from your own post." }, title: "You cannot buy from your own post" %>
           <% else %>
-            <%= link_to "BUY", buy_path(car.id), class:"btn btn-success btn-buy d-block" %>
+            <%= link_to image_tag("Icons/shopping_cart_white.png", class:"buy-btn--image") + "BUY", buy_path(car.id), class:"btn btn-success btn-buy d-block", title: "Go to purchase confirmation" %>
           <% end %>
         </div>
 

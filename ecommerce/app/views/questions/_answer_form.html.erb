@@ -20,8 +20,9 @@
     </div><br>
 
     <div class="actions form-group text-end">
-        <%= form.submit "Send answer", class:"btn btn-primary btn-lg answer-form--btn"%> &nbsp &nbsp
-        <%= link_to 'Back', car_path(@car), class:"btn btn-warning btn-lg answer-form--btn"%>
+        <%= link_to image_tag("Icons/back_arrow.png", class:"question--back-btn-image"), car_path(@car), class:"btn btn-warning btn-lg answer-form--btn answer-form--back-btn", title:"Go back" %> &nbsp &nbsp
+        <%= form.submit "Send answer", class:"btn btn-primary btn-lg answer-form--btn"%>
+        <br><br>
     </div>
 
 <% end %>
