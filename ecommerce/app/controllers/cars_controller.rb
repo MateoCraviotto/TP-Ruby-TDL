@@ -91,6 +91,7 @@ class CarsController < ApplicationController
     redirect_to cars_path, notice: "Not autorithized to edit this car." if @car.nil?
   end
 
+=begin
   def active_posts
     @cars = Car.all
 
@@ -119,7 +120,7 @@ class CarsController < ApplicationController
     @last_index -= 1
     
   end
-
+=end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_car
