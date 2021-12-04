@@ -8,38 +8,36 @@
         </div>
         <div class="col col-form-label">
             <table class="table car-show--table">
-                <div class="dropdown btn-sm">
-                    <a class="btn btn-secondary dropdown-toggle header--nav-item" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">PRICE</a>
-                    <ul class="dropdown-menu dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDarkDropdownMenuLink">
-                        <li><p class="dropdown-item">USD: <%=@car.price %></p></li>
-                        <li><p class="dropdown-item">EUR: <%=@car.exchange_price('EUR')%></p></li>
-                        <li><p class="dropdown-item">ARS: <%=@car.exchange_price('ARS')%></p></li>
-                        <li><p class="dropdown-item">BRL: <%=@car.exchange_price('BRL')%></p></li>
-                    </ul>
-                </div>    
-                <tr>
-                    <td><div class="field form-group"><label class="small"><p class="car-show--table-labels d-inline">Manufacturer</p></label></div></td>
+            <tr>
+            <td><div class="field form-group"><label class="small"><p class="car-show--table-labels d-inline">Manufacturer</p></label></div></td>
                     <td><%= @car.manufacturer %></td>
-                </tr>
+                    </tr>
                 <tr>
                     <td><div class="field form-group"><label class="small"><p class="car-show--table-labels d-inline">Capacity</p></label></div></td>
                     <td><%= @car.capacity %></td>
-                </tr>
+                    </tr>
                 <tr>
                     <td><div class="field form-group"><label class="small"><p class="car-show--table-labels d-inline">Car class</p></label></div></td>
                     <td><%= @car.car_class %></td>
                 </tr>
                 <tr>
-                    <td><div class="field form-group"><label class="small"><p class="car-show--table-labels d-inline">Car type</p></label></div></td>
-                    <td><%= @car.car_type %></td>
+                <td><div class="field form-group"><label class="small"><p class="car-show--table-labels d-inline">Car type</p></label></div></td>
+                <td><%= @car.car_type %></td>
                 </tr>
                 <tr>
-                    <td><div class="field form-group"><label class="small"><p class="car-show--table-labels d-inline">Body car type</p></label></div></td>
-                    <td><%= @car.body %></td>
+                <td><div class="field form-group"><label class="small"><p class="car-show--table-labels d-inline">Body car type</p></label></div></td>
+                <td><%= @car.body %></td>
                 </tr>
-
+                <tr>
+                    <td><div class="field form-group"><label class="small"><p class="car-show--table-labels d-inline">Price</p></label></div></td>
+                    <td><%= "USD " + number_with_delimiter( @car.price, delimiter:".").to_s %><br>
+                    <%= " EUR " + number_with_delimiter( @car.exchange_price('EUR'), delimiter:".").to_s %><br> 
+                    <%= " ARS " + number_with_delimiter( @car.exchange_price('ARS'), delimiter:".").to_s %><br>
+                    <%= " BRL " + number_with_delimiter( @car.exchange_price('BRL'), delimiter:".").to_s %></td>
+                </tr>   
+                
                 <% if is_user_signed_in_car_owner(@car) && @car.is_for_sale %>
-                    <tr class="borderless-cell text-end">
+                <tr class="borderless-cell text-end">
                         <td></td>
                         <td>
                             <div class="d-inline-block text-center">
