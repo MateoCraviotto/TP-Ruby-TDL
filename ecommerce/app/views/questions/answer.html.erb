@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @question.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @question.content %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @question.user.username %>
+</p>
+
+<%if @question.answer%>
+  <p>
+    <strong>Answer:</strong>
+    <%= @question.answer %>
+  </p>
+<%end%>
+
+<br><br>
+    <% if user_signed_in? and @car.user_id == current_user.id %>
+    <%= form_with(model: @question, url: answer_path(@car.id, @question.id)) do |form| %>
+      <% if @question.errors.any? %>
+      <div id="error_explanation">
+      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
+        <ul>
+          <% @question.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+            <% end %>
+        </ul>
+      </div>
+    <% end %>
+      
+      <%= form.hidden_field :title, value: @question.title %>
+      <%= form.hidden_field :content, value: @question.content %>
+      <%= form.hidden_field :user_id, value: @question.user_id %>
+      
+      <div class="field">
+      <%= form.label "answer" %>
+        <%= form.text_field :answer %>
+        </div>
+    
+        <div class="actions">
+        <%= form.submit "Send answer", class:"btn btn-dark" %>
+        </div>
+        
+      <% end %>
+    <% end %>
+<br>  
+
+<%= link_to 'Edit', edit_car_question_path(@car, @question) %> |
+<%= link_to 'Back', car_path(@car) %>
