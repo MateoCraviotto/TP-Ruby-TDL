@@ -15,14 +15,9 @@
   </div>
 
   <div class="container text-dark col-10 mx-auto">
-    <% if !@question.answer.nil? %>
-      <h3>Answer from '<%= @car.user.username %>':</h3>
-      <p><%= @question.answer %></p>
-    <%end%>
-  <div>
-
-  <% if @is_user_signed_in_the_car_owner %>
-    <%= render 'answer_form', question: @question %>
-  <% end %>
+    <% if @is_user_signed_in_the_car_owner %>
+      <%= render 'answer_form', question: @question %>
+    <% end %>
+  </div>
 
 </div><br>
