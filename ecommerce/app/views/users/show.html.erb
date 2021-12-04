@@ -1,20 +1,39 @@
-<div class="card mx-auto text-black">
-  <h2 class="card-header">Hi <%= @user.username %>!</h2>
+<div class="card mx-auto text-black user-show--card-div">
+  <h2 class="card-header text-dark text-center border-0">Profile</h2>
+	<h6 class="card-header text-dark text-center small text-muted">These are your account details</h6>
   <div class="card-body">
 		<div class="row">
-			<div class="col-3">
-				<%= image_tag(current_user.avatar_thumbnail, class: "img-fluid") %>
+			<div class="col-4 text-center">
+				<%= image_tag(current_user.avatar_thumbnail, class:"img-fluid user-show--avatar") %>
 			</div>
-			<div class="col">
-				<h3 class="display-6">User details:<h3>
-				<br/>
-				<p>Name: <%= @user.first_name %> <%= @user.last_name%></p>
-				<p>Email: <%= @user.email %></p>
+			<div class="col user-show--details-div col-form-label">
+				<table class="table user-show--details">
+					<tr>
+						<td><div class="field form-group"><label class="small">First name</label></div></td>
+						<td><%= @user.first_name %></td>
+					</tr>
+					<tr>
+						<td><div class="field form-group"><label class="small">Last name</label></div></td>
+						<td><%= @user.last_name %></td>
+					</tr>
+					<tr>
+						<td><div class="field form-group"><label class="small">Email</label></div></td>
+						<td><%= @user.email %></td>
+					</tr>
+					<tr>
+						<td><div class="field form-group"><label class="small">Username</label></div></td>
+						<td><%= @user.username %></td>
+					</tr>
+					<tr>
+						<td><div class="field form-group"><label class="small">Member since</label></div></td>
+						<td><%= @user.created_at.strftime("%d/%m/%Y") %></td>
+					</tr>
+					<tr class="borderless-cell text-end">
+						<td></td>
+						<td><%= link_to "Edit Profile", edit_user_registration_path, class:"btn btn-primary btn-right user-show--edit-btn"%></td>
+					</tr>
+				</table>
 			</div>
 		</div>
-		<br/>
-		<div class="d-md-flex justify-content-md-end">
-			<%= link_to "Edit Profile", edit_user_registration_path, class:"btn btn-primary btn-right"%>
-		<div>
 	</div>
 </div>

@@ -1,0 +1,66 @@
+<div class="card-body">
+    
+    <div class="d-inline-block show--div-info">
+
+    <div class="row">
+        <div class="col-4 text-center">
+          <image src="<%= (url_for(@car.car_image)) %>" class="img-fluid show--car-image">
+        </div>
+        <div class="col col-form-label">
+            <table class="table car-show--table">
+                <div class="dropdown btn-sm">
+                    <a class="btn btn-secondary dropdown-toggle header--nav-item" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">PRICE</a>
+                    <ul class="dropdown-menu dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDarkDropdownMenuLink">
+                        <li><p class="dropdown-item">USD: <%=@car.price %></p></li>
+                        <li><p class="dropdown-item">EUR: <%=@car.exchange_price('EUR')%></p></li>
+                        <li><p class="dropdown-item">ARS: <%=@car.exchange_price('ARS')%></p></li>
+                        <li><p class="dropdown-item">BRL: <%=@car.exchange_price('BRL')%></p></li>
+                    </ul>
+                </div>    
+                <tr>
+                    <td><div class="field form-group"><label class="small"><p class="car-show--table-labels d-inline">Manufacturer</p></label></div></td>
+                    <td><%= @car.manufacturer %></td>
+                </tr>
+                <tr>
+                    <td><div class="field form-group"><label class="small"><p class="car-show--table-labels d-inline">Capacity</p></label></div></td>
+                    <td><%= @car.capacity %></td>
+                </tr>
+                <tr>
+                    <td><div class="field form-group"><label class="small"><p class="car-show--table-labels d-inline">Car class</p></label></div></td>
+                    <td><%= @car.car_class %></td>
+                </tr>
+                <tr>
+                    <td><div class="field form-group"><label class="small"><p class="car-show--table-labels d-inline">Car type</p></label></div></td>
+                    <td><%= @car.car_type %></td>
+                </tr>
+                <tr>
+                    <td><div class="field form-group"><label class="small"><p class="car-show--table-labels d-inline">Body car type</p></label></div></td>
+                    <td><%= @car.body %></td>
+                </tr>
+
+                <% if is_user_signed_in_car_owner(@car) && @car.is_for_sale %>
+                    <tr class="borderless-cell text-end">
+                        <td></td>
+                        <td>
+                            <div class="d-inline-block text-center">
+                                <div class="d-inline"><%= link_to "EDIT", edit_car_path(@car), class:"btn btn-warning car-show--details-btn" %></div><br>
+                                <p class="d-inline car-show--table-edit-btn">This is your post, edit it here.</p>
+                            </div>
+                        </td>
+                    </tr>
+                <% elsif @car.is_for_sale %>
+                    <tr class="borderless-cell text-end">
+                        <td></td>
+                        <td>
+                            <div class="d-inline-block text-center">
+                                <div class="d-inline"><%= link_to "Ask the seller", new_car_question_path(@car), class: "btn btn-primary car-show--details-btn" %></div><br>
+                                <p class="d-inline car-show--table-edit-btn">Any doubts?</p>
+                            </div>
+                        </td>
+                    </tr>
+                <% end %>
+            </table>
+        </div>
+	</div>
+    </div>
+  </div>

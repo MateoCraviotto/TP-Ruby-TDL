@@ -1,0 +1,79 @@
+<div class="card question-show--card-div">
+    
+    <h2 class="card-header text-center">
+        <div class="field form-group">
+            <label><p class="d-inline"><%= @car.car_model %></p></label>
+        </div>
+    </h2>
+    
+    <div class="card-body">
+
+        <div class="row">
+            <div class="col-4 text-center">
+                <image src="<%= (url_for(@car.car_image)) %>" class="img-fluid buy--car-image">
+            </div>
+            <div class="col col-form-label">
+                <table class="table">
+                    <tr>
+                        <td><div class="field form-group"><label class="small"><p class="d-inline">Price</p></label></div></td>
+                        <td><%= "$" + number_with_delimiter( @car.price, delimiter:".").to_s %></td>
+                    </tr>
+                    <tr>
+                        <td><div class="field form-group"><label class="small"><p class="d-inline">Manufacturer</p></label></div></td>
+                        <td><%= @car.manufacturer %></td>
+                    </tr>
+                    <tr>
+                        <td><div class="field form-group"><label class="small"><p class="d-inline">Capacity</p></label></div></td>
+                        <td><%= @car.capacity %></td>
+                    </tr>
+                    <tr>
+                        <td><div class="field form-group"><label class="small"><p class="d-inline">Car class</p></label></div></td>
+                        <td><%= @car.car_class %></td>
+                    </tr>
+                    <tr>
+                        <td><div class="field form-group"><label class="small"><p class="d-inline">Car type</p></label></div></td>
+                        <td><%= @car.car_type %></td>
+                    </tr>
+                    <tr>
+                        <td><div class="field form-group"><label class="small"><p class="d-inline">Body car type</p></label></div></td>
+                        <td><%= @car.body %></td>
+                    </tr>
+                    <tr class="borderless-cell text-end">
+                        <td></td>
+                        <td>
+                            <div class="d-inline-block text-center">
+                                <%if false%>
+                                
+                                <%= form_with(model: @car) do |form| %>
+
+                                <% if @car.errors.any? %>
+                                    <div id="error_explanation">
+                                        <h2><%= pluralize(@car.errors.count, "error") %> prohibited this car from being saved:</h2>
+
+                                        <ul>
+                                        <% @car.errors.each do |error| %>
+                                            <li><%= error.full_message %></li>
+                                        <% end %>
+                                        </ul>
+                                    </div>
+                                <% end %>
+
+                                <%= form.number_field :is_for_sale, value: "0", type: :hidden %> 
+                                <%= form.number_field :buyer_id, value: current_user.id, type: :hidden %> 
+                                <%= form.date_field :purchased_at, value: Time.current, type: :hidden %> 
+
+                                <div class="d-inline">
+                                <%= form.submit class: "btn btn-success btn-buy", value:"CONFIRM PURCHASE", data: { disable_with: "CONFIRM PURCHASE" } %>
+                                </div><br>
+
+                                <% end %>
+                                <% end %>
+                                <div class="d-inline"><%= link_to "CONFIRM PURCHASE", confirm_purchase_path(@car.id), class:"btn btn-success btn-buy" %></div><br>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

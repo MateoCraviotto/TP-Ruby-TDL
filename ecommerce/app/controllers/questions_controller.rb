@@ -2,6 +2,7 @@ class QuestionsController < ApplicationController
   before_action :set_question, only: %i[ show edit update destroy answer ]
   before_action :set_car, except: %i[ index answer ]
   before_action :correct_user, only: [:answer]
+  before_action :authenticate_user!, only: [:new]
 
   # GET /questions or /questions.json
   def index
@@ -25,6 +26,7 @@ class QuestionsController < ApplicationController
   # POST /questions or /questions.json
   def create
     @question = @car.questions.new(question_params.merge(user_id: current_user.id))
+
     respond_to do |format|
       if @question.save
         format.html { redirect_to car_path(@car), notice: "Question was successfully created." }

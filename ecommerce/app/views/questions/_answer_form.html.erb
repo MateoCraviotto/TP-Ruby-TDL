@@ -1,0 +1,27 @@
+<%= form_with(model: @question, url: answer_path(@car.id, @question.id)) do |form| %>
+    <% if @question.errors.any? %>
+      <div id="error_explanation">
+      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
+      <ul>
+      <% @question.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+      </ul>
+      </div>
+    <% end %>
+    
+    <%= form.hidden_field :title, value: @question.title %>
+    <%= form.hidden_field :content, value: @question.content %>
+    <%= form.hidden_field :user_id, value: @question.user_id %>
+    
+    <div class="field text-dark">
+        <br><%= form.label "ANSWER", class:"col-form-label" %> <i class="text-muted">(write your answer here)</i><br>
+        <%= form.rich_text_area :answer, class:"form-control field question-form--text-area", required: true %>
+    </div><br>
+
+    <div class="actions form-group text-end">
+        <%= form.submit "Send answer", class:"btn btn-primary btn-lg answer-form--btn"%> &nbsp &nbsp
+        <%= link_to 'Back', car_path(@car), class:"btn btn-warning btn-lg answer-form--btn"%>
+    </div>
+
+<% end %>

@@ -5,8 +5,7 @@ class CarsController < ApplicationController
 
   # GET /cars or /cars.json
   def index
-    
-    @cars = Car.all
+    @cars = Car.all.where(is_for_sale: true)
 
     i = 0
     @array_four_cars = []
@@ -29,7 +28,6 @@ class CarsController < ApplicationController
 
     @last_index = @array_four_cars.count
     @last_index -= 1
-    
   end
 
   # GET /cars/1 or /cars/1.json
@@ -44,6 +42,22 @@ class CarsController < ApplicationController
 
   # GET /cars/1/edit
   def edit
+  end
+
+  def buy
+    car_id = buy_path().gsub( buy_path().tr("0-9","") , "").to_i
+    @car = Car.find_by_id(car_id)
+  end
+
+  def confirm_purchase
+    car_id = confirm_purchase_path().gsub( confirm_purchase_path().tr("0-9","") , "").to_i
+    @car = Car.find_by_id(car_id)
+
+    @car.update(is_for_sale: false)
+    @car.update(buyer_id: current_user.id)
+    @car.update(purchased_at: Time.current)
+
+    redirect_to cars_path(), notice: "Car was successfully purchased."
   end
 
   # POST /cars or /cars.json
@@ -90,35 +104,6 @@ class CarsController < ApplicationController
     redirect_to cars_path, notice: "Not autorithized to edit this car." if @car.nil?
   end
 
-  def active_posts
-    @cars = Car.all
-
-    i = 0
-    @array_four_cars = []
-    four_cars = []
-
-    @cars.each do |car|
-      if car.user_id == current_user.id
-        four_cars.push(car)
-        i+=1
-        if i == 4
-            @array_four_cars.push(four_cars)
-            four_cars = []
-            
-            i = 0
-        end
-      end
-    end
-    if i != 0
-      @array_four_cars.push(four_cars)
-      four_cars = []
-    end
-
-    @last_index = @array_four_cars.count
-    @last_index -= 1
-    
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_car
@@ -127,6 +112,6 @@ class CarsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def car_params
-      params.require(:car).permit(:car_image, :car_model, :car_class, :car_type, :body, :capacity, :manufacturer, :price, :user_id)
+      params.require(:car).permit(:car_image, :car_model, :car_class, :car_type, :body, :capacity, :manufacturer, :price, :user_id, :is_for_sale, :buyer_id, :purchased_at)
     end
 end

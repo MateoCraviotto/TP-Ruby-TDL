@@ -1,93 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<div class="card mx-auto show--card text-light">
-  <h2 class="card-header text-light text-center show--car-head"><%= @car.car_model %></h2>
-  <div class="card-body">
-    <div class="d-inline-block show--div-info">
-      <div class="d-inline-block show--div-info-image" >
-        <% if @car.car_image.attached? %>
-            <image src="<%= (url_for(@car.car_image)) %>" class="img-fluid show--car-image d-inline">
-        <% end %>
-      </div>
-      <div class="show--div-info-attributes"> 
-        <div class="dropdown btn-sm">
-          <a class="btn btn-secondary dropdown-toggle header--nav-item" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">PRICE</a>
-          <ul class="dropdown-menu dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDarkDropdownMenuLink">
-              <li><p class="dropdown-item">USD: <%=@car.price %></p></li>
-              <li><p class="dropdown-item">EUR: <%=@car.exchange_price('EUR')%></p></li>
-              <li><p class="dropdown-item">ARS: <%=@car.exchange_price('ARS')%></p></li>
-              <li><p class="dropdown-item">BRL: <%=@car.exchange_price('BRL')%></p></li>
-          </ul>
-        </div>
-        MANUFACTURER: <%= @car.manufacturer %><br>
-        CAPACITY: <%= @car.capacity %><br>
-        CAR TYPE: <%= @car.car_type %><br>
-        CAR CLASS: <%= @car.car_class %><br>
-        BODY CAR TYPE: <%= @car.body %><br> 
-      </div>
-    </div>
+<div class="card mx-auto text-light show--card">
   
-    <br><br>
-    <% if user_signed_in? and @car.user_id == current_user.id %>
-      Hey, this is your post, you can edit it from here:&nbsp &nbsp &nbsp
-      <div class="d-inline"><%= link_to "EDIT", edit_car_path(@car), class:"btn btn-warning" %></div>
-    <% end %>
-    <br>
-  </div>
-</div>
-<br>
+  <h2 class="card-header text-center">
+    <div class="field form-group">
+        <label><p class="show--car-head d-inline"><%= @car.car_model %></p></label>
+    </div>
+  </h2>
+  
+  <%= render "car_details" %>
 
-<% if user_signed_in? and @car.user_id != current_user.id %>
-  <div class="d-grid gap-2 col-6 mx-auto">
-    <%= link_to "Doubts? Ask the seller", new_car_question_path(@car), class: "btn btn-primary" %>
-  </div>
-<% end %>
+  <hr class="car-show--card-divider">
 
-<br>
-<div class="card mx-auto show--card text-light">
-  <h2 class="card-header text-light text-center show--car-head"><%= "Questions" %></h2>
-  <div class="container">
-    <tbody>
-    <% @car.questions.each do |question| %>
-      <br>
-        <div class="card w-85 text-white bg-secondary">
-          <h3 class="card-header text-center">TOPIC: <%= question.title %></h3>
-          <div class="container"><p><%= question.content %></p></div>
-          
-          <% if user_signed_in? and question.user_id == current_user.id %>
-            <br>
-            <div class="position-absolute bottom-0 end-0 d-grid gap-2 d-md-block btn-group-sm">
-              <%= link_to 'Edit', edit_car_question_path(question.car, question), class:"btn btn-warning" %>
-              <%= link_to 'Delete', car_question_path(question.car, question), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
-            </div>
-          <% elsif user_signed_in? and question.answer == nil and @car.user_id == current_user.id%>
-            <br>
-            <div class="justify-content-md-end d-md-flex btn-group-sm">
-              <%= link_to 'Answer', car_question_path(@car, question), class:"btn btn-success" %>
-            </div>
-          <% end %>
-        </div>
-        
-        <% if question.answer %>
-          <br>
-          <div class="card w-85 text-white bg-success">
-            <h5 class="card-header text-center">ANSWER</h5>
-              <div class="container"><p><%= question.answer %></p></div>
-            <% if user_signed_in? and @car.user_id == current_user.id %>
-              <br>
-              <div class="position-absolute bottom-0 end-0 d-grid gap-2 d-md-block btn-group-sm">
-                <%= link_to 'Edit', car_question_path(@car, question), class:"btn btn-warning" %>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
-        
-        <% if question != @car.questions.last %>
-          <br>
-          <div class="h-divider"></div>
-        <%end%>
-    <% end %>
-    </tbody>
-    <br>
+  <%= render "car_questions" %>
 </div>
 <br>

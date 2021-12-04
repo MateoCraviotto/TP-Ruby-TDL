@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container mx-auto cars--index--catalogue-container">
+  <br>
+  <h1 class="text-center">Sale history</h1>
+  <p class="text-center lead"><small>These are the cars your have sold.</small></p>
+  <p class="text-center lead"><small>You have currently a gross revenue of <b><%= "$" + number_with_delimiter( @gross_revenue, delimiter:".").to_s %></b></small></p>
+  <br><br>
+  
+ <% unless @array_four_cars.count == 0 %>
+    <% @array_four_cars.each_with_index do |four_cars, j| %>
+    
+      <%= render partial: 'sold_cars', locals: {cars: four_cars} %>
+
+      <% if j != @last_index %>
+        <br><br><br>
+      <% else %>
+        <br>
+      <% end %>
+    <% end %>
+
+  <% else %>
+    <p class="text-center lead">You have not sold any car yet.</p>
+    <br><br>
+  <% end %>
+
+</div>
+
+<br><br>

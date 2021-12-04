@@ -47,7 +47,7 @@
     width: 150px;
 }
 
-.home--link, .about--link, .catlogue--car-model-link{
+.home--link, .about--link, .catalogue--car-model-link{
     text-decoration: none;
     color: rgb(255, 192, 192);
 }
@@ -60,7 +60,7 @@
     -webkit-font-smoothing: antialiased;
 }
 
-.catlogue--car-model-link:hover {
+.catalogue--car-model-link:hover {
     color: rgb(255, 192, 192);
     text-shadow: 0px 0px 5px red;
 }
@@ -74,6 +74,10 @@
     border-radius: 10px;
     margin-right: 3em;
     margin-left: 3em;
+}
+
+.contact--button:hover {
+    box-shadow: 0px 0px 12px #000000;
 }
 
 .new-session--checkbox-label {
@@ -140,15 +144,22 @@ nav {
 
 .btn-buy:hover {
     background-color: rgb(104, 192, 31);
-    
 }
 
 .btn-buy:focus {
     background-color: rgb(94, 175, 29);
 }
 
-.btn-buy:active {
+.btn-buy:active, .btn-buy-disabled:active {
     outline-color: none;
+}
+
+.btn-buy-disabled {
+    background-color: rgb(94, 143, 55);
+}
+
+.btn-buy-disabled:hover {
+    background-color: rgb(94, 143, 55);
 }
 
 .active-posts--btn-edit-left {
@@ -173,20 +184,20 @@ nav {
 }
 
 .show--card {
-    border-radius: 1em;
     background:rgba(95, 95, 95, 0.877);
     border-radius: 1.5em;
     box-shadow: 0px 0px 10px #000000;
 }
 
-.show--car-image {
+.show--car-image, .buy--car-image {
     border-radius: 0.5em;
     box-shadow: 0px 0px 3px #000000;
-    vertical-align: center;
+    margin-top: 3em;
 }
 
 .show--car-head {
-    color: rgb(255, 192, 192);
+    color: rgb(255, 255, 255) !important;
+    font-weight: bold;
 }
 
 .show--div-info {
@@ -213,6 +224,155 @@ nav {
     height:1px;
     width:100%;
     border-top:5px solid white;
+}
+
+.question-form--card-div {
+    border-radius: 1em;
+    box-shadow: 0px 0px 6px #000000;
+}
+
+.questions-form--submit-div {
+    width: 92%;
+}
+
+.question-form--btn {
+    border-radius: 12px;
+}
+
+.question-form--text-area {
+    background-color: #f8f9fa;
+}
+
+.question-form--text-area:focus {
+    background-color: #f8f9fa;
+}
+
+.question-show--card-div {
+    border-radius: 1em;
+    box-shadow: 0px 0px 6px #000000;
+}
+
+.question-show--text-area {
+    background-color: white !important;
+}
+
+.answer-form--btn {
+    border-radius: 12px;
+}
+
+.question-show--question-content-div {
+    margin-top: 0;
+}
+
+.user-show--card-div, .user-edit--card-div, .user-sign-up--card-div, .user-sign-in--card-div {
+    border-radius: 1em;
+    box-shadow: 0px 0px 6px #000000;
+}
+
+.user-show--details {
+    font-size: x-large;
+}
+
+.user-show--details-div {
+    border-radius: 0.8em;
+}
+
+.user-show--avatar, .user-edit--avatar {
+    border-radius: 2em;
+}
+
+.borderless-cell {
+    border: 1px solid Transparent !important;
+} 
+
+.user-show--edit-btn, .user-edit--btn, .user-sign-up--btn, .user-sign-in--btn {
+    border-radius: 10px;
+}
+
+.user-sign-up--btn-lg, .user-sign-in--btn-lg {
+    border-radius: 12px;
+}
+
+.header--username-item {
+    margin-bottom: 0.5em;
+}
+
+.header--dropdown-menu {
+    border-radius: 0.7em;
+}
+
+.car-show--table {
+    font-size: large;
+    color: white !important;
+    margin-bottom: 0;
+}
+
+.car-show--table-labels {
+    color: rgb(214, 214, 214) !important;
+}
+
+.car-show--table-edit-btn {
+    color: rgb(230, 230, 230) !important;
+    font-size: small;
+}
+
+.car-show--details-btn {
+    border-radius: 10px;
+}
+
+.car-show--card-divider {
+    color: black;
+    margin: 0;
+}
+
+.car-show--question-btns-div {
+    float: right;
+    margin-top: 0.2em;
+}
+
+.car-show--edit-question-btn {
+    width: 20px;
+}
+
+.car-show--answer-question-image {
+    width: 20px;
+    margin-right: 10px;
+}
+.car-show--answer-question-btn {
+    border-radius: 10px;
+}
+
+.car-show--answer-question-btn:hover {
+    box-shadow: 0px 0px 6px #000000;
+}
+
+.car-show--edit-question-btn:hover {
+    -webkit-filter: drop-shadow(0px 0px 3px rgb(0, 0, 0) );
+    filter: drop-shadow(0px 0px 3px rgb(0, 0, 0));
+}
+
+.car-show-details--question-card {
+    border-top-left-radius: 1.5em;
+    border-top-right-radius: 1.5em;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin: 0.5em;
+    margin-bottom: 0;
+}
+
+.car-show-details--answer-card {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 1.5em;
+    border-bottom-right-radius: 1.5em;
+    margin: 0.5em;
+    margin-top: 0;
+    background-color: rgb(93, 172, 80);
+}
+
+.car-show--question-user-h6 {
+    margin: 0.5em;
+    margin-top: 0;
 }
 
 body{

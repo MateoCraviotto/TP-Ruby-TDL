@@ -1,7 +1,5 @@
-<%= render 'form', question: @question %>
-
-<%if false%>
-<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-    <%= link_to 'Back', car_path(params[:car_id]), class:"btn btn-warning" %>
+<div class="card question-form--card-div">
+    <h2 class="card-header text-dark border-0">Ask a question</h2>
+    <h6 class="card-header text-dark small text-muted">Ask anything about the product you would to know by filling this form</h6>
+    <%= render 'form', question: @question %>
 </div>
-<%end%>
