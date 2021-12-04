@@ -56,6 +56,10 @@
         <%= form.number_field :user_id, id: :car_user_id, value: current_user.id, type: :hidden %> 
     </div>
 
+    <div class="field form-group">
+        <%= form.number_field :is_for_sale, value: "1", type: :hidden %> 
+    </div>
+
     <br>
 
     <div class="actions form-group text-center">

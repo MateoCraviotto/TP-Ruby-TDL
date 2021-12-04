@@ -6,7 +6,14 @@ class UsersController < ApplicationController
 	end
 
 	def active_posts
-		@cars = Car.all
+		@cars_unfiltered = Car.all
+		@cars = []
+
+		@cars_unfiltered.each do |car|
+			if car.is_for_sale
+				@cars.push(car)
+			end
+		end
 	
 		i = 0
 		@array_four_cars = []
@@ -31,6 +38,13 @@ class UsersController < ApplicationController
 	
 		@last_index = @array_four_cars.count
 		@last_index -= 1
-		
+	end
+
+	def purchase_history
+
+	end
+
+	def sale_history
+
 	end
 end

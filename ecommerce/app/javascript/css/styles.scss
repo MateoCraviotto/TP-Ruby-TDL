@@ -144,15 +144,22 @@ nav {
 
 .btn-buy:hover {
     background-color: rgb(104, 192, 31);
-    
 }
 
 .btn-buy:focus {
     background-color: rgb(94, 175, 29);
 }
 
-.btn-buy:active {
+.btn-buy:active, .btn-buy-disabled:active {
     outline-color: none;
+}
+
+.btn-buy-disabled {
+    background-color: rgb(94, 143, 55);
+}
+
+.btn-buy-disabled:hover {
+    background-color: rgb(94, 143, 55);
 }
 
 .active-posts--btn-edit-left {

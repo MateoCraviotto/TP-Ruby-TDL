@@ -15,7 +15,7 @@
   </div>
 
   <div class="container text-dark col-10 mx-auto">
-    <% if @is_user_signed_in_the_car_owner %>
+    <% if is_user_signed_in_car_owner(@car) %>
       <%= render 'answer_form', question: @question %>
     <% end %>
   </div>

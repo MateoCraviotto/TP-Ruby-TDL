@@ -33,7 +33,7 @@
                     <td><%= @car.body %></td>
                 </tr>
 
-                <% if @is_user_signed_in_the_car_owner %>
+                <% if is_user_signed_in_car_owner(@car) %>
                     <tr class="borderless-cell text-end">
                         <td></td>
                         <td>

@@ -5,8 +5,14 @@ class CarsController < ApplicationController
 
   # GET /cars or /cars.json
   def index
-    
-    @cars = Car.all
+    @cars_unfiltered = Car.all
+    @cars = []
+
+    @cars_unfiltered.each do |car|
+      if car.is_for_sale
+        @cars.push(car)
+      end
+    end
 
     i = 0
     @array_four_cars = []
@@ -29,12 +35,10 @@ class CarsController < ApplicationController
 
     @last_index = @array_four_cars.count
     @last_index -= 1
-    
   end
 
   # GET /cars/1 or /cars/1.json
   def show
-    @is_user_signed_in_the_car_owner = user_signed_in? && (@car.user_id == current_user.id)
   end
 
   # GET /cars/new
@@ -91,36 +95,6 @@ class CarsController < ApplicationController
     redirect_to cars_path, notice: "Not autorithized to edit this car." if @car.nil?
   end
 
-=begin
-  def active_posts
-    @cars = Car.all
-
-    i = 0
-    @array_four_cars = []
-    four_cars = []
-
-    @cars.each do |car|
-      if car.user_id == current_user.id
-        four_cars.push(car)
-        i+=1
-        if i == 4
-            @array_four_cars.push(four_cars)
-            four_cars = []
-            
-            i = 0
-        end
-      end
-    end
-    if i != 0
-      @array_four_cars.push(four_cars)
-      four_cars = []
-    end
-
-    @last_index = @array_four_cars.count
-    @last_index -= 1
-    
-  end
-=end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_car
@@ -129,6 +103,6 @@ class CarsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def car_params
-      params.require(:car).permit(:car_image, :car_model, :car_class, :car_type, :body, :capacity, :manufacturer, :price, :user_id)
+      params.require(:car).permit(:car_image, :car_model, :car_class, :car_type, :body, :capacity, :manufacturer, :price, :user_id, :is_for_sale, :buyer_id, :purchased_at)
     end
 end

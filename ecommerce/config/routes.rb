@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get "contact", to: "contact#index", as: :contact
 
   get "active_posts", to: "users#active_posts"
+  get "purchase_history", to: "users#purchase_history"
+  get "sale_history", to: "users#sale_history"
 
   #no tocar
   get "cars/:car_id/questions/:id/answer", to: "questions#answer", as: :answer
