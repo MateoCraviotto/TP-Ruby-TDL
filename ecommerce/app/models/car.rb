@@ -2,7 +2,7 @@ require "open_exchange_rates"
 
 class Car < ApplicationRecord
     has_one_attached :car_image
-    belongs_to :user
+    belongs_to :user, optional: true
     has_many :questions
 
     def exchange_price(currency)
