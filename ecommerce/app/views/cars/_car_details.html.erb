@@ -31,9 +31,9 @@
                 <tr>
                     <td><div class="field form-group"><label class="small"><p class="car-show--table-labels d-inline">Price</p></label></div></td>
                     <td><%= "USD " + number_with_delimiter( @car.price, delimiter:".").to_s %><br>
-                    <%= " EUR " + number_with_delimiter( @car.exchange_price('EUR'), delimiter:".").to_s %><br> 
-                    <%= " ARS " + number_with_delimiter( @car.exchange_price('ARS'), delimiter:".").to_s %><br>
-                    <%= " BRL " + number_with_delimiter( @car.exchange_price('BRL'), delimiter:".").to_s %></td>
+                    <%#= " EUR " + number_with_delimiter( @car.exchange_price('EUR'), delimiter:".").to_s %><br> 
+                    <%#= " ARS " + number_with_delimiter( @car.exchange_price('ARS'), delimiter:".").to_s %><br>
+                    <%#= " BRL " + number_with_delimiter( @car.exchange_price('BRL'), delimiter:".").to_s %></td>
                 </tr>   
                 
                 <% if is_user_signed_in_car_owner(@car) && @car.is_for_sale %>

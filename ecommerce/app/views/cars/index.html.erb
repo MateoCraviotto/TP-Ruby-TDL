@@ -4,7 +4,17 @@
   <br>
   <h1 class="text-center">Catalogue</h1>
   <p class="text-center lead"><small>Happy shopping!</small></p>
-  <br><br>
+    <a class="dropdown-toggle btn btn-light car-show--sort-by-btn" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sort by</a>
+    <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDarkDropdownMenuLink">
+      <li><%= link_to "Car model (A-Z)", change_sort_by_setting_path(1), class:"dropdown-item" %></li>
+      <li><%= link_to "Car model (Z-A)", change_sort_by_setting_path(2), class:"dropdown-item" %></li>
+      <li><%= link_to "Manufacturer (A-Z)", change_sort_by_setting_path(3), class:"dropdown-item" %></li>
+      <li><%= link_to "Manufacturer (Z-A)", change_sort_by_setting_path(4), class:"dropdown-item" %></li>
+      <li><%= link_to "Price (High-Low)", change_sort_by_setting_path(5), class:"dropdown-item" %></li>
+      <li><%= link_to "Price (Low-High)", change_sort_by_setting_path(6), class:"dropdown-item" %></li>
+    </ul>
+
+  <br><br><br>
 
   <% unless @array_four_cars.count == 0 %>
     <% @array_four_cars.each_with_index do |four_cars, j| %>

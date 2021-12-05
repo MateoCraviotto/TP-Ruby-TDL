@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get "cars/buy/:car_id", to: "cars#buy", as: :buy
   get "cars/buy/confirm_purchase/:car_id", to: "cars#confirm_purchase", as: :confirm_purchase
 
+  get "cars/sort_by_setting/:setting_id", to: "cars#change_sort_by_setting", as: :change_sort_by_setting
+
   #no tocar
   get "cars/:car_id/questions/:id/answer", to: "questions#answer", as: :answer
   post "cars/:car_id/questions/:id/answer", to: "questions#answer"
