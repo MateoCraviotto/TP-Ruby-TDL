@@ -10,6 +10,10 @@
             <h6 class="text-white text-uppercase d-block small text-center car-catalogue--header"> <%= car.manufacturer %> </h6>
             <h4 class="text-white text-uppercase text-center"> <%= link_to car.car_model, car_path(id: car.id), class:"catalogue--car-model-link" %> </h4>
             <h5 class="text-white text-uppercase text-center car-catalogue--header"><%= "$" + number_with_delimiter( car.price, delimiter:".").to_s %></h5>
+          
+            <div class="text-center">
+              <i>Sold on <%= car.purchased_at.strftime("%d/%m/%Y %H:%M") %></i>
+            </div>
           </div>
 
         <% else %>
