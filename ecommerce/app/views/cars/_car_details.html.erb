@@ -39,9 +39,9 @@
                 <% if is_user_signed_in_car_owner(@car) && @car.is_for_sale %>
                 <tr class="borderless-cell text-end">
                         <td></td>
-                        <td>
+                        <td>                            
                             <div class="d-inline-block text-center">
-                                <div class="d-inline"><%= link_to "EDIT", edit_car_path(@car), class:"btn btn-warning car-show--details-btn" %></div><br>
+                                <div class="d-inline"><%= link_to image_tag("Icons/edit_page_black.png", class:"car-show--edit-image") + "EDIT", edit_car_path(@car), class:"btn btn-warning car-show--details-btn" %></div><br>
                                 <p class="d-inline car-show--table-edit-btn">This is your post, edit it here.</p>
                             </div>
                         </td>
@@ -51,8 +51,14 @@
                         <td></td>
                         <td>
                             <div class="d-inline-block text-center">
-                                <div class="d-inline"><%= link_to "Ask the seller", new_car_question_path(@car), class: "btn btn-primary car-show--details-btn" %></div><br>
-                                <p class="d-inline car-show--table-edit-btn">Any doubts?</p>
+                                <div class="d-inline-block text-center">
+                                    <div class="d-inline"><%= link_to image_tag("Icons/shopping_cart_white.png", class:"buy-btn--image") + "BUY", buy_path(@car.id), class:"btn btn-success btn-buy car-show--btn-buy", title: "Go to purchase confirmation" %></div><br>
+                                    <p class="d-inline car-show--table-edit-btn">&nbsp</p>
+                                </div>
+                                <div class="d-inline-block text-center">
+                                    <div class="d-inline"><%= link_to image_tag("Icons/question_bubble_white.png", class:"car-show--question-image") + "Ask the seller", new_car_question_path(@car), class: "btn btn-primary car-show--details-btn" %></div><br>
+                                    <p class="d-inline car-show--table-edit-btn">Any doubts?</p>
+                                </div>
                             </div>
                         </td>
                     </tr>

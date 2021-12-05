@@ -64,9 +64,6 @@
       </div>
     <% end %>
     <br/>
-    <div class="actions d-grid gap-2 col-3 mx-auto">
-      <%= link_to "Back", :back, class: "btn btn-secondary btn-lg user-edit--btn" %>
-    </div>
   </div>
 </div>
 <br/>
@@ -76,7 +73,7 @@
   <h6 class="card-header text-dark small text-muted">We hope to see you again soon!</h6>
   <div class="card-body text-center">
     <p class="card-text text-start">Account termination is definitive. All data from your account will be permanently deleted immediately upon termination.</p><br>
-    <%= button_to "Delete my account", registration_path(resource_name), class: "btn btn-danger btn-lg text-center user-edit--btn", data: { confirm: "Are you sure?" }, method: :delete %>
+    <%= link_to image_tag("Icons/ex_white.png", class:"delete-account--image") + "Delete my account", registration_path(resource_name), class: "btn btn-danger btn-lg text-center user-edit--btn", data: { confirm: "Are you sure?" }, method: :delete %>
   </div>
 </div>
 <br><br>

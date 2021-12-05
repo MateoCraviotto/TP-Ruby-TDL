@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 2021_12_04_032251) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+    t.integer "exchanged_price"
     t.boolean "is_for_sale"
     t.integer "buyer_id"
     t.datetime "purchased_at"

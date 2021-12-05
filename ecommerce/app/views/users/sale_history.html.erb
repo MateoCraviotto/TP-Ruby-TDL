@@ -4,7 +4,7 @@
   <br>
   <h1 class="text-center">Sale history</h1>
   <p class="text-center lead"><small>These are the cars your have sold.</small></p>
-  <p class="text-center lead"><small>You have currently a gross revenue of <b><%= "$" + number_with_delimiter( @gross_revenue, delimiter:".").to_s %></b></small></p>
+  <p class="text-center lead"><small>You have currently a gross revenue of <b class="sold-cars--gross-revenue-text"><%= "$" + number_with_delimiter( @gross_revenue, delimiter:".").to_s %></b> from all your sales</small></p>
   <br><br>
   
  <% unless @array_four_cars.count == 0 %>

@@ -68,7 +68,7 @@
 
                                 <% end %>
                                 <% end %>
-                                <div class="d-inline"><%= link_to "CONFIRM PURCHASE", confirm_purchase_path(@car.id), class:"btn btn-success btn-buy" %></div><br>
+                                <div class="d-inline"><%= link_to image_tag("Icons/shopping_cart_white.png", class:"buy-btn--image") + "CONFIRM PURCHASE", confirm_purchase_path(@car.id), class:"btn btn-success btn-buy", title: "Confirm purchase and buy this car" %></div><br>
                             </div>
                         </td>
                     </tr>
