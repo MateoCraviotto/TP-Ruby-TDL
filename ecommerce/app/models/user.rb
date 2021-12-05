@@ -1,3 +1,7 @@
+require 'csv'
+require 'activerecord-import/base'
+require 'activerecord-import/active_record/adapters/sqlite3_adapter'
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -10,6 +14,19 @@ class User < ApplicationRecord
   has_many :cars
   has_many :questions
 
+  def import_cars(file_path)
+    cars = []
+    CSV.foreach(file_path, headers: true) do |row|
+        hash = row.to_h
+        hash.store("user_id", self.id)
+        hash.store("is_for_sale", true)
+        self.cars << Car.new(hash)
+        cars << hash
+        puts hash
+    end
+    Car.import cars
+  end
+
   def avatar_thumbnail
     if avatar.attached?
       avatar
@@ -19,7 +36,7 @@ class User < ApplicationRecord
   end
 
   private
-  
+
   def add_default_avatar
     unless avatar.attached?
       avatar.attach(

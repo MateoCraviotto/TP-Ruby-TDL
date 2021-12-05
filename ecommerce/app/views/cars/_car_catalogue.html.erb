@@ -6,7 +6,9 @@
       <% unless car.nil? %>
 
         <div class="col">
+        <% if false %>
           <%= link_to image_tag(url_for(car.car_image), class:"img-fluid car-catalogue--car-image"), car_path(id: car.id), title: "Click for more info" %>
+        <%end%>
           <h6 class="text-white text-uppercase d-block small text-center car-catalogue--header"> <%= car.manufacturer %> </h6>
           <h4 class="text-white text-uppercase text-center"> <%= link_to car.car_model, car_path(id: car.id), class:"catalogue--car-model-link", title: "Click for more info" %> </h4>
           <h5 class="text-white text-uppercase text-center car-catalogue--header"><%= "$" + number_with_delimiter( car.price, delimiter:".").to_s %></h5>
