@@ -85,7 +85,7 @@ class UsersController < ApplicationController
 		@last_index -= 1
 	end
 
-
+	
 	private
 
 		def sum_of_car_prices(cars)

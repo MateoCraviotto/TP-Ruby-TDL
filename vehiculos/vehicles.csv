@@ -1,4 +1,4 @@
-model,car_class,car_type,body,capacity,manufacturer,price
+car_model,car_class,car_type,body,capacity,manufacturer,price
 BR8,Open Wheel,Race car,Single seat formula car,1 (driver),Benefactor,"$3,400,000"
 DR1,Open Wheel,Race car,Single seat IndyCar,1 (driver),Declasse,"$2,997,000"
 PR4,Open Wheel,Race car,Single seat formula car,1 (driver),Progen,"$3,515,000"
