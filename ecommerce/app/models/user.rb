@@ -15,7 +15,6 @@ class User < ApplicationRecord
   has_many :questions
 
   def import_cars(file_path)
-    cars = []
     CSV.foreach(file_path, headers: true) do |row|
         hash = row.to_h
         hash.store("user_id", self.id)
@@ -24,10 +23,9 @@ class User < ApplicationRecord
         path, filename = car.image_path
         car.car_image.attach(io: File.open(path), filename: filename)
         self.cars << car
-        cars << hash
         puts hash
     end
-    Car.import cars
+    Car.import self.cars
   end
 
   def avatar_thumbnail
