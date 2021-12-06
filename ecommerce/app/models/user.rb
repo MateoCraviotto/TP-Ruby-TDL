@@ -1,6 +1,6 @@
 require 'csv'
 require 'activerecord-import/base'
-require 'activerecord-import/active_record/adapters/sqlite3_adapter'
+#require 'activerecord-import/active_record/adapters/sqlite3_adapter'
 
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
