@@ -1,6 +1,6 @@
 require 'csv'
 require 'activerecord-import/base'
-require 'activerecord-import/active_record/adapters/sqlite3_adapter'
+#require 'activerecord-import/active_record/adapters/sqlite3_adapter'
 
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
@@ -20,7 +20,10 @@ class User < ApplicationRecord
         hash = row.to_h
         hash.store("user_id", self.id)
         hash.store("is_for_sale", true)
-        self.cars << Car.new(hash)
+        car = Car.new(hash)
+        path, filename = car.image_path
+        car.car_image.attach(io: File.open(path), filename: filename)
+        self.cars << car
         cars << hash
         puts hash
     end
