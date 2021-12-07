@@ -26,7 +26,7 @@ class CarsController < ApplicationController
       four_cars = []
     end
 
-    @last_index = @array_four_cars.count
+    @last_index = @array_four_cars.size
     @last_index -= 1
   end
 

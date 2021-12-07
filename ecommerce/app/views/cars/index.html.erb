@@ -6,7 +6,7 @@
   <p class="text-center lead"><small>Happy shopping!</small></p>
   <br><br>
 
-  <% unless @array_four_cars.count == 0 %>
+  <% unless @array_four_cars.size == 0 %>
     <% @array_four_cars.each_with_index do |four_cars, j| %>
       
       <%= render partial: 'car_catalogue', locals: {cars: four_cars} %>
