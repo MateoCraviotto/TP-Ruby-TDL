@@ -19,13 +19,12 @@ class User < ApplicationRecord
         hash = row.to_h
         hash.store("user_id", self.id)
         hash.store("is_for_sale", true)
-        car = Car.new(hash)
+        car = Car.create!(hash)
         path, filename = car.image_path
         car.car_image.attach(io: File.open(path), filename: filename)
         self.cars << car
         puts hash
     end
-    Car.import self.cars
   end
 
   def avatar_thumbnail
