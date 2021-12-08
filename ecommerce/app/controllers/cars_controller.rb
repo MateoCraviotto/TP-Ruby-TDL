@@ -14,10 +14,11 @@ class CarsController < ApplicationController
 
     @cars = Car.all.where(is_for_sale: true).order(session[:sort_by_setting].to_sym => session[:sort_by_order].to_sym)
 
+
     @array_four_cars = []
     arrange_cars_in_four_cars(@cars, @array_four_cars)
     
-    @last_index = @array_four_cars.count
+    @last_index = @array_four_cars.size
     @last_index -= 1
   end
 

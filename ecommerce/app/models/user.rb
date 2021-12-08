@@ -1,6 +1,6 @@
 require 'csv'
 require 'activerecord-import/base'
-require 'activerecord-import/active_record/adapters/sqlite3_adapter'
+#require 'activerecord-import/active_record/adapters/sqlite3_adapter'
 
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
@@ -15,16 +15,16 @@ class User < ApplicationRecord
   has_many :questions
 
   def import_cars(file_path)
-    cars = []
     CSV.foreach(file_path, headers: true) do |row|
         hash = row.to_h
         hash.store("user_id", self.id)
         hash.store("is_for_sale", true)
-        self.cars << Car.new(hash)
-        cars << hash
+        car = Car.create!(hash)
+        path, filename = car.image_path
+        car.car_image.attach(io: File.open(path), filename: filename)
+        self.cars << car
         puts hash
     end
-    Car.import cars
   end
 
   def avatar_thumbnail

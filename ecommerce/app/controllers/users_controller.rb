@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 		@array_four_cars = []
 		arrange_cars_in_four_cars(@cars, @array_four_cars)
 	
-		@last_index = @array_four_cars.count
+		@last_index = @array_four_cars.size
 		@last_index -= 1
 	end
 
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 		@array_four_cars = []
 		arrange_cars_in_four_cars(@cars, @array_four_cars)
 	
-		@last_index = @array_four_cars.count
+		@last_index = @array_four_cars.size
 		@last_index -= 1
 	end
 
@@ -33,11 +33,11 @@ class UsersController < ApplicationController
 		@array_four_cars = []
 		arrange_cars_in_four_cars(@cars, @array_four_cars)
 	
-		@last_index = @array_four_cars.count
+		@last_index = @array_four_cars.size
 		@last_index -= 1
 	end
 
-
+	
 	private
 
 		def arrange_cars_in_four_cars(cars, array_four_cars)

@@ -1,4 +1,8 @@
 car_model,car_class,car_type,body,capacity,manufacturer,price
+BR8,Open Wheel,Race car,Single seat formula car,1 (driver),Benefactor,3400000
+DR1,Open Wheel,Race car,Single seat IndyCar,1 (driver),Declasse,2997000
+PR4,Open Wheel,Race car,Single seat formula car,1 (driver),Progen,3515000
+R88,Open Wheel,Race car,Single seat formula car,1 (driver),Ocelot,3115000
 811,Super,Civilian car,Hypercar,2 (driver and passenger),Pfister,1135000
 Autarch,Super,Civilian car,Hypercar,2 (driver and passenger),Overflod,1955000
 Adder,Super,Civilian car,Hypercar,2 (driver and passenger),Truffade,1000000
@@ -132,6 +136,62 @@ Tornado Rat Rod,Sports Classics,Civilian vehicle,Custom hotrod,2 (driver and pas
 Turismo Classic,Sports Classics,Civilian car,2-door sports car,2 (driver and passenger),Grotti,705000
 Viseris,Sports Classics,Civilian car,2-door sports car,2 (driver and passenger),Lampadati,875000
 Zion Classic,Sports Classics,Civilian car,2-door coupe,2 (driver and passenger),Ubermacht,812000
+Asea,Sedans,Civilian car,4-door compact sedan,4 (driver and three passengers),Declasse,12000
+Asterope,Sedans,Civilian car,4-door sedan,4 (driver and three passengers),Karin,26000
+Cognoscenti (Armored),Sedans,Civilian car,4-door armored sedan,4 (driver and three passengers),Enus,558000
+Cognoscenti 55,Sedans,Civilian car,4-Door Sedan,4 (driver and three passengers),Enus,154000
+Cognoscenti 55 (Armored),Sedans,Civilian car,4-Door armored sedan,4 (driver and three passengers),Enus,396000
+Fugitive,Sedans,Civilian car,4-door sedan,4 (driver and three passengers),Cheval,24000
+Glendale Custom,Sedans,Civilian car,Custom 4-door sedan,4 (driver and three passengers),Benefactor,520000
+Primo Custom,Sedans,Civilian car,Four-door sedan,4 (driver and three passengers),Albany,400000
+Schafter LWB (Armored),Sedans,Civilian car,4-door armored sedan,4 (driver and three passengers),Benefactor,438000
+Schafter V12 (Armored),Sedans,Civilian car,4-door armored sedan,4 (driver and three passengers),Benefactor,325000
+Stanier,Sedans,Civilian car,4-door sedan,4 (driver and three passengers),Vapid,10000
+Surge,Sedans,Civilian car,4-door compact sedan,4 (driver and three passengers),Cheval,38000
+Tailgater,Sedans,Civilian car,4-door sedan,4 (driver and three passengers),Obey,55000
+Turreted Limo,Sedans,Civilian vehicle,4-door armed limousine,"5 (driver, gunner and three passengers)",Benefactor,1650000
+Warrener,Sedans,Civilian car,4-door sedan,4 (driver and three passengers),Vulcar,120000
+Buccaneer Custom,Muscle,Civilian car,2-door coupé/muscle car,2 (driver and passenger),Albany,390000
+Chino,Muscle,Civilian car,2-door coupe/muscle car,2 (driver and passenger),Vapid,225000
+Chino Custom,Muscle,Civilian car,2-door coupe/muscle car,2 (driver and passenger),Vapid,180000
+Clique,Muscle,Civilian car,2-door vintage coupe,2 (driver and passenger),Vapid,909000
+Coquette BlackFin,Muscle,Civilian car,2-door vintage sports car,2 (driver and passenger),Invetero,695000
+Deviant,Muscle,Civilian car,2-door hardtop,2 (driver and passenger),Schyster,512000
+Dominator,Muscle,Civilian car,2-door muscle car,2 (driver and passenger),Vapid,35000
+Dominator GTX,Muscle,Civilian car,2-door muscle car,2 (driver and passenger),Vapid,725000
+Apocalypse Dominator,Muscle,Civilian car,Custom 2-door muscle car,2 (driver and passenger),Vapid,1132000
+Future Shock Dominator,Muscle,Civilian car,Custom 2-door muscle car,2 (driver and passenger),Vapid,1132000
+Nightmare Dominator,Muscle,Civilian car,Custom 2-door muscle car,2 (driver and passenger),Vapid,1132000
+Duke O'Death,Muscle,Armored civilian car,2-door muscle car,2 (driver and passenger),Imponte,279000
+Beater Dukes,Muscle,Civilian car,2-door muscle car,2 (driver and passenger),Imponte,378000
+Ellie,Muscle,Civilian car,2-door muscle car,2 (driver and passenger),Vapid,565000
+Faction Custom,Muscle,Civilian car,2-door muscle car,2 (driver and passenger),Willard,335000
+Faction Custom Donk,Muscle,Civilian car,Hi-rider,2 (driver and passenger),Willard,695000
+Gauntlet,Muscle,Civilian car,2-door muscle car,2 (driver and passenger),Bravado,32000
+Gauntlet Classic,Muscle,Civilian car,2-door muscle car,2 (driver and passenger),Bravado,615000
+Gauntlet Classic Custom,Muscle,Civilian car,2-door muscle car,2 (driver and passenger),Bravado,815000
+Gauntlet Hellfire,Muscle,Civilian car,2-door muscle car,2 (driver and passenger),Bravado,745000
+Apocalypse Impaler,Muscle,Civilian car,Custom 2-door muscle car,2 (driver and passenger),Declasse,1209500
+Future Shock Impaler,Muscle,Civilian car,Custom 2-door muscle car,2 (driver and passenger),Declasse,1209500
+Nightmare Impaler,Muscle,Civilian car,Custom 2-door muscle car,2 (driver and passenger),Declasse,1209500
+Apocalypse Imperator,Muscle,Civilian car,Custom 2-door muscle car,2 (driver and passenger),Vapid,2284940
+Future Shock Imperator,Muscle,Civilian car,Custom 2-door muscle car,2 (driver and passenger),Vapid,2284940
+Nightmare Imperator,Muscle,Civilian car,Custom 2-door muscle car,2 (driver and passenger),Vapid,2284940
+Lurcher,Muscle,Civilian car,4-door hearse,2 (driver and passenger),Albany,650000
+Manana Custom,Muscle,Civilian car,2-door coupé/muscle car,2 (driver and passenger),Albany,925000
+Moonbeam Custom,Muscle,Civilian van,4-door minivan,4 (driver and three passengers),Declasse,370000
+Nightshade,Muscle,Civilian vehicle,2-door muscle car,2 (driver and passenger),Imponte,585000
+Peyote Gasser,Muscle,Civilian car,Custom hotrod/gasser,2 (driver and passenger),Vapid,805000
+Rat-Loader,Muscle,Civilian truck,2-door pickup truck,2 (driver and passenger),Bravado,6000
+Rat-Truck,Muscle,Civilian truck,2-door pickup truck,2 (driver and passenger),Bravado,37500
+Ruiner 2000,Muscle,Civilian car,Two-door modified muscle car,2 (driver and passenger),Imponte,5745600
+Sabre Turbo Custom,Muscle,Civilian car,2-door lowrider-style muscle car,2 (driver and passenger),Declasse,490000
+Slamvan Custom,Muscle,Civilian pick-up,Custom pick-up truck,2 (driver and passenger),Vapid,415000
+Tulip,Muscle,Civilian car,4-door hardtop,4 (driver and three passengers),Declasse,718000
+Vamos,Muscle,Civilian car,2-door coupe,2 (driver and passenger),Declasse,596000
+Virgo Classic Custom,Muscle,Civilian car,Two-door lowrider,2 (driver and passenger),Dundreary,240000
+Voodoo Custom,Muscle,Civilian car,2-door lowrider,2 (driver and passenger),Declasse,420000
+Drift Yosemite,Muscle,Civilian car,2-door custom muscle car,2 (driver and passenger),Declasse,1308000
 Cognoscenti Cabrio,Coupes,Civilian car,2-door convertible,2 (driver and passenger),Enus,185000
 Exemplar,Coupes,Civilian car,4-door coupé,4 (driver and three passengers),Dewbauchee,205000
 Felon,Coupes,Civilian car,4-door coupé,4 (driver and three passengers),Lampadati,100000
@@ -151,6 +211,26 @@ Issi,Compacts,Civilian car,2-door convertible,2 (driver and passenger),Weeny,180
 Issi Classic,Compacts,Civilian car,2-door compact,2 (driver and passenger),Weeny,360000
 Prairie,Compacts,Civilian car,Sport compact coupé,2 (driver and passenger),Bollokan,25000
 Weevil,Compacts,Civillian car,2-door compact,2 (driver and passenger),BF,870000
+Baller,SUVs,Civilian SUV,4-door full-size SUV,4 (driver and three passengers),Gallivanter,90000
+Baller LE,SUVs,Civilian SUV,4-door full size SUV,4 (driver and three passengers),Gallivanter,149000
+Baller LE (Armored),SUVs,Civilian SUV,4-door full size armored SUV,4 (driver and three passengers),Gallivanter,374000
+Baller LE LWB,SUVs,Civilian SUV,4-door long-wheelbase SUV,4 (driver and three passengers),Gallivanter,247000
+Baller LE LWB (Armored),SUVs,Civilian SUV,4-door long-wheelbase armored SUV,4 (driver and three passengers),Gallivanter,513000
+BeeJay XL,SUVs,Civilian car,4-door SUV,4 (driver and three passengers),Karin,27000
+FQ 2,SUVs,Civilian SUV,4-door SUV,4 (driver and three passengers),Fathom,50000
+Granger,SUVs,Civilian SUV,4-door SUV,"8 (driver, three cab passengers and four passengers hanging on the sides)",Declasse,35000
+Gresley,SUVs,Civilian car,4-door SUV,4 (driver and three passengers),Bravado,29000
+Huntley S,SUVs,Civilian car,4-door SUV,4 (driver and three passengers),Enus,195000
+Landstalker XL,SUVs,Civilian car,4-door SUV,4 (driver and three passengers),Dundreary,1220000
+Patriot Stretch,SUVs,Civilian truck,4-door limousine,6 (driver and five passengers),Mammoth,611800
+Radius,SUVs,Civilian car,4-door SUV,4 (driver and three passengers),Vapid,32000
+Rebla GTS,SUVs,Civilian car,4-door luxury SUV,4 (driver and 3 passengers),Ubermacht,1175000
+Rocoto,SUVs,Civilian SUV,4-door SUV,4 (driver and three passengers),Obey,85000
+Seminole,SUVs,Civilian car,Four-door mid-size SUV,4 (driver and three passengers),Canis,30000
+Seminole Frontier,SUVs,Civilian car,4-door SUV,4 (driver and three passengers),Canis,678000
+Toros,SUVs,Civilian SUV,4-door SUV,4 (driver and three passengers),Pegassi,498000
+XLS,SUVs,Civilian SUV,4-door SUV,4 (driver and three passengers),Benefactor,253000
+XLS (Armored),SUVs,Civilian SUV,Armored 4-door SUV,4 (driver and three passengers),Benefactor,522000
 Apocalypse Deathbike,Motorcycles,Civilian vehicle,Custom motorcycle,1 (rider),Western,1269000
 Future Shock Deathbike,Motorcycles,Civilian vehicle,Custom motorcycle,1 (rider),Western,1269000
 Nightmare Deathbike,Motorcycles,Civilian vehicle,Custom motorcycle,1 (rider),Western,1269000
@@ -180,3 +260,67 @@ Thrust,Motorcycles,Civilian motorcycle,Sport touring bike,2 (rider and passenger
 Vindicator,Motorcycles,Civilian motorcycle,Sport touring motorcycle,2 (rider and passenger),Dinka,630000
 Vortex,Motorcycles,Civilian motorcycle,Streetfighter,1 (rider),Pegassi,356000
 Zombie Bobber,Motorcycles,Civilian motorcycle,Bobber,1 (rider),Western,99000
+Apocalypse Bruiser,Off-Road,Civilian vehicle,Custom 4-door 6x6 limousine,4 (driver and three passengers),Benefactor,1609000
+Future Shock Bruiser,Off-Road,Civilian vehicle,Custom 4-door 6x6 limousine,4 (driver and three passengers),Benefactor,1609000
+Nightmare Bruiser,Off-Road,Civilian vehicle,Custom 4-door 6x6 limousine,4 (driver and three passengers),Benefactor,1609000
+Apocalypse Brutus,Off-Road,Civilian vehicle,Custom van,2 (driver and passenger),Declasse,2666650
+Future Shock Brutus,Off-Road,Civilian vehicle,Custom van,2 (driver and passenger),Declasse,2666650
+Nightmare Brutus,Off-Road,Civilian vehicle,Custom van,2 (driver and passenger),Declasse,2666650
+Bifta,Off-Road,Civilian car,Buggy,2 (driver and passenger),BF,75000
+Blazer,Off-Road,Civilian ATV,Quad bike,1 (rider),Nagasaki,8000
+Blazer Aqua,Off-Road,Civilian vehicle,Amphibious quad bike/ATV,1 (driver),Nagasaki,1755600
+Bodhi,Off-Road,Civilian pickup truck,2-door pickup truck,"4 (driver, front passenger and two riders in the bed)",Canis,25000
+Brawler,Off-Road,Civilian vehicle,Rally Raid modified sports car,2 (driver and passenger),Coil,715000
+Caracara,Off-Road,Civilian truck,4-door armed 6x6 pickup truck,"5 (driver, three passengers and gunner)",Vapid,1775000
+Caracara 4x4,Off-Road,Civilian truck,4-door pickup truck,4 (driver and three passengers),Vapid,875000
+Desert Raid,Off-Road,Civilian vehicle,Trophy truck,2 (driver and passenger),Vapid,695000
+Dubsta 6x6,Off-Road,Civilian truck,4-door SUT/pickup truck,6 (driver and five passengers),Benefactor,249000
+Dune Buggy,Off-Road,Civilian car,Off-road buggy,2 (driver and passenger),BF,20000
+Dune FAV,Off-Road,Civilian vehicle,Fast-attack buggy,2 (driver and gunner),BF,1130500
+Everon,Off-Road,Civilian vehicle,4-door offroad truck,4 (driver and 3 passengers),Karin,1475000
+Freecrawler,Off-Road,Civilian vehicle,4-door SUV,4 (driver and three passengers),Canis,597000
+Hot Rod Blazer,Off-Road,Custom vehicle,Quad bike,1 (rider),Nagasaki,69000
+Kalahari,Off-Road,Civilian car,2-door utility truck,2 (driver and passenger),Canis,40000
+Kamacho,Off-Road,Civilian car,4-door utility truck,4 (driver and three passengers),Canis,345000
+Nightshark,Off-Road,Civilian vehicle,Armored 4-door SUV,4 (driver and three passengers),HVY,1245000
+Marshall,Off-Road,Civilian off-road vehicle,Monster truck,2 (driver and passenger),Cheval,250000
+Outlaw,Off-Road,Civilian vehicle,2-door UTV,2 (driver and passenger),Nagasaki,1268000
+Ramp Buggy,Off-Road,Civilian car,Custom built ramp car,2 (driver and passenger),BF,3192000
+Rancher XL,Off-Road,Civilian car,4-door SUV,4 (driver and three passenger),Declasse,9000
+Rebel,Off-Road,Civilian truck,2-door pickup truck,2 (driver and passenger),Karin,22000
+Rusty Rebel,Off-Road,Civilian truck,2-door pickup truck,2 (driver and passenger),Karin,3000
+Sandking XL,Off-Road,Civilian car,4-door pickup truck,4 (driver and three passengers),Vapid,45000
+Sandking SWB,Off-Road,Civilian car,2-door pickup truck,2 (driver and passenger),Vapid,38000
+Apocalypse Sasquatch,Off-Road,Civilian vehicle,2-door monster truck,2 (driver and passenger),Bravado,1530875
+Future Shock Sasquatch,Off-Road,Civilian car,2-door monster truck,2 (driver and passenger),Bravado,1530875
+Nightmare Sasquatch,Off-Road,Civilian car,2-door monster truck,2 (driver and passenger),Bravado,1530875
+Street Blazer,Off-Road,Civilian vehicle,Quad bike,1 (rider),Nagasaki,81000
+Technical Aqua,Off-Road,Civilian truck,Custom amphibious pick-up truck,"3 (driver, passenger and gunner)",Karin,1489600
+Technical Custom,Off-Road,Civilian truck,2-door armed pickup truck,"3 (driver, passenger and gunner)",Karin,142500
+Trophy Truck,Off-Road,Civilian vehicle,Trophy truck,2 (driver and passenger),Vapid,550000
+Liberator,Off-Road,Events/custom vehicle,All-wheel steer monster truck,2 (driver and passenger),Vapid,742014
+Vagrant,Off-Road,Civilian car,Off-road buggy,2 (driver and passenger),Maxwell,2214000
+Verus,Off-Road,Military ATV,Quad bike,2 (driver and passenger),Dinka,192000
+Yosemite Rancher,Off-Road,Civilian vehicle,2-door Pickup truck,2 (driver and passenger),Declasse,700000
+Zhaba,Off-Road,Civilian vehicle,All-terrain vehicle,"4 (Driver, front passenger, 2 rear passengers)",RUNE,2400000
+Apocalypse Cerberus,Commercial,Industial vehicle,Custom truck,2 (driver and passenger),MTL,3870300
+Future Shock Cerberus,Commercial,Industrial vehicle,Custom truck,2 (driver and passenger),MTL,3870300
+Nightmare Cerberus,Commercial,Industrial vehicle,Custom truck,2 (driver and passenger),MTL,3870300
+Hauler Custom,Commercial,Custom truck,Armored cab-over semi-truck,2 (driver and passenger),Jobuilt,1400000
+Mule Custom,Commercial,Industrial/Commercial vehicle,2-door box truck,"4 (driver, passenger and 2 passengers on side)",Maibatsu,95760
+Phantom Custom,Commercial,Custom truck,Armored semi-truck,"5 (driver, cab passenger and three external passengers)",JoBuilt,1225000
+Phantom Wedge,Commercial,Civilian truck,Custom semi-truck,"5 (driver, cab passenger and three external passengers)",Jobuilt,2553600
+Pounder Custom,Commercial,Industrial/Commercial vehicle,Armored box truck,"8 (driver and passenger, and 4 hanging on sides)",MTL,320530
+Dump,Industrial,Industrial vehicle,Off-road dump truck,1 (driver),HVY,1000000
+Guardian,Industrial,Civilian truck,4-door pickup truck,6 (driver and five passengers),Vapid,375000
+Bison,Vans,Civilian vehicle,Double-cab pickup truck,"6 (driver, three passengers and two truck bed passengers)",Bravado,30000
+Bobcat XL,Vans,Civilian car,2-door pickup truck,2 (driver and passenger),Vapid,23000
+Armored Boxville,Vans,Civilian vehicle,Custom armored van,"5 (driver, gunner and three passengers)",Brute,2926000
+Minivan Custom,Vans,Civilian car,4-door minivan,4 (driver and three passengers),Vapid,330000
+Paradise,Vans,Civilian van,Full size van,4 (driver and three passengers),Bravado,25000
+Rumpo Custom,Vans,Civilian vehicle,Passenger van,4 (driver and three passengers),Bravado,130000
+Surfer,Vans,Civilian van,4-door van,2 (driver and passenger),BF,11000
+Youga,Vans,Civilian van,Full size van,2 (driver and passenger),Bravado,16000
+Youga Classic,Vans,Civilian van,Full size van,4 (driver and three passengers),Bravado,195000
+Youga Classic 4x4,Vans,Civilian vehicle,4-door custom van,4 (driver and three passengers),Bravado,1288000
+Slamtruck,Utility,Civillian car,2-door car hauler,2 (driver and passenger),Vapid,1310000
