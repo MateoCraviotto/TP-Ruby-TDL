@@ -8,13 +8,53 @@ class UsersController < ApplicationController
 	def active_posts
 		@cars = Car.all.where(is_for_sale: true, user_id: current_user.id)
 	
-		order_cars(@cars)
+		i = 0
+		@array_four_cars = []
+		four_cars = []
+	
+		@cars.each do |car|
+			four_cars.push(car)
+			i+=1
+			if i == 4
+				@array_four_cars.push(four_cars)
+				four_cars = []
+				
+				i = 0
+			end
+		end
+		if i != 0
+		  @array_four_cars.push(four_cars)
+		  four_cars = []
+		end
+	
+		@last_index = @array_four_cars.size
+		@last_index -= 1
 	end
 
 	def purchase_history
 		@cars = Car.all.where(is_for_sale: false, buyer_id: current_user.id)
 	
-		order_cars(@cars)
+		i = 0
+		@array_four_cars = []
+		four_cars = []
+	
+		@cars.each do |car|
+			four_cars.push(car)
+			i+=1
+			if i == 4
+				@array_four_cars.push(four_cars)
+				four_cars = []
+				
+				i = 0
+			end
+		end
+		if i != 0
+		  @array_four_cars.push(four_cars)
+		  four_cars = []
+		end
+	
+		@last_index = @array_four_cars.size
+		@last_index -= 1
 	end
 
 
@@ -22,7 +62,27 @@ class UsersController < ApplicationController
 		@cars = Car.all.where(is_for_sale: false, user_id: current_user.id)
 		@gross_revenue = sum_of_car_prices(@cars)
 
-		order_cars(@cars)
+		i = 0
+		@array_four_cars = []
+		four_cars = []
+	
+		@cars.each do |car|
+			four_cars.push(car)
+			i+=1
+			if i == 4
+				@array_four_cars.push(four_cars)
+				four_cars = []
+				
+				i = 0
+			end
+		end
+		if i != 0
+		  @array_four_cars.push(four_cars)
+		  four_cars = []
+		end
+	
+		@last_index = @array_four_cars.size
+		@last_index -= 1
 	end
 
 	
@@ -34,29 +94,5 @@ class UsersController < ApplicationController
 				@total += car.price
 			end
 			return @total
-		end
-
-		def order_cars(cars)
-			i = 0
-			@array_four_cars = []
-			four_cars = []
-		
-			cars.each do |car|
-				four_cars.push(car)
-				i+=1
-				if i == 4
-					@array_four_cars.push(four_cars)
-					four_cars = []
-					
-					i = 0
-				end
-			end
-			if i != 0
-				@array_four_cars.push(four_cars)
-				four_cars = []
-			end
-		
-			@last_index = @array_four_cars.size
-			@last_index -= 1
 		end
 end
