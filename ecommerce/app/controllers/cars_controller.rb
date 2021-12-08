@@ -1,31 +1,23 @@
 class CarsController < ApplicationController
   before_action :set_car, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except: [:index, :show] #ACÁ PONER PARA COMRPAR DESPUÉS
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :correct_user, only: [:edit, :update, :destroy]
+  
+  before_action :sort_by_init
+  helper_method :sort_by_get_helper, :sort_by_price_helper, :sort_by_car_model_helper, :sort_by_manufacturer_helper,
+                :sort_by_order_asc_helper, :sort_by_order_desc_helper
+  
+  
 
   # GET /cars or /cars.json
   def index
-    @cars = Car.all.where(is_for_sale: true)
 
-    i = 0
+    @cars = Car.all.where(is_for_sale: true).order(session[:sort_by_setting].to_sym => session[:sort_by_order].to_sym)
+
+
     @array_four_cars = []
-    four_cars = []
-
-    @cars.each do |car|
-      four_cars.push(car)
-      i+=1
-      if i == 4
-          @array_four_cars.push(four_cars)
-          four_cars = []
-          
-          i = 0
-      end
-    end
-    if i != 0
-      @array_four_cars.push(four_cars)
-      four_cars = []
-    end
-
+    arrange_cars_in_four_cars(@cars, @array_four_cars)
+    
     @last_index = @array_four_cars.size
     @last_index -= 1
   end
@@ -62,7 +54,6 @@ class CarsController < ApplicationController
 
   # POST /cars or /cars.json
   def create
-    
     #@car = Car.new(car_params)
     @car = current_user.cars.build(car_params)
 
@@ -104,10 +95,95 @@ class CarsController < ApplicationController
     redirect_to cars_path, notice: "Not autorithized to edit this car." if @car.nil?
   end
 
+  def change_sort_by_setting
+    setting_id = change_sort_by_setting_path().gsub( change_sort_by_setting_path().tr("0-9","") , "").to_i
+
+    if setting_id == 1
+      sort_by_car_model_helper()
+      sort_by_order_asc_helper()
+    elsif setting_id == 2
+      sort_by_car_model_helper()
+      sort_by_order_desc_helper()
+    elsif setting_id == 3
+      sort_by_manufacturer_helper()
+      sort_by_order_asc_helper()
+    elsif setting_id == 4
+      sort_by_manufacturer_helper()
+      sort_by_order_desc_helper()
+    elsif setting_id == 5
+      sort_by_price_helper()
+      sort_by_order_desc_helper()
+    else
+      sort_by_price_helper()
+      sort_by_order_asc_helper()
+    end
+
+    redirect_to cars_path
+  end
+  
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_car
-      @car = Car.find(params[:id])
+
+  
+  # Use callbacks to share common setup or constraints between actions.
+  def set_car
+    @car = Car.find(params[:id])
+  end
+  
+  #Por default va a ordenar por car_model
+    def sort_by_init
+      if session[:sort_by_setting].nil? || session[:sort_by_order].nil?
+        session[:sort_by_setting] = "car_model"
+        session[:sort_by_order] = "asc"
+      end
+    end
+  
+    def sort_by_get_helper
+      session[:sort_by_setting]
+    end
+  
+    def sort_by_price_helper
+      session[:sort_by_setting] = "price"
+    end
+
+    def sort_by_car_model_helper
+      session[:sort_by_setting] = "car_model"
+    end
+
+    def sort_by_manufacturer_helper
+      session[:sort_by_setting] = "manufacturer"
+    end
+
+    def sort_by_order_asc_helper
+      session[:sort_by_order] = "asc"
+    end
+
+    def sort_by_order_desc_helper
+      session[:sort_by_order] = "desc"
+    end
+
+    def sort_by_current_setting(cars)
+      cars.order(session[:sort_by_setting].to_sym => :desc)
+    end
+
+    def arrange_cars_in_four_cars(cars, array_four_cars)
+      i = 0
+      four_cars = []
+  
+      cars.each do |car|
+        four_cars.push(car)
+        i+=1
+        if i == 4
+            array_four_cars.push(four_cars)
+            four_cars = []
+            
+            i = 0
+        end
+      end
+      
+      if i != 0
+        array_four_cars.push(four_cars)
+        four_cars = []
+      end
     end
 
     # Only allow a list of trusted parameters through.
