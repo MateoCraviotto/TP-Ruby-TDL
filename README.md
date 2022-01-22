@@ -11,6 +11,12 @@ Ecommerce desarrollado en Ruby on Rails - Trabajo práctico para la materia Teor
 ## Corrector:
 - Ferrigno, Leandro
 
+## Servidor live (hosteado en Heroku)
+
+Se puede utilizar la página web accediendo con [este enlace](https://legendary-motorsport.herokuapp.com/). Posee las mismas funcionalidades que corriendo el trabajo en un servidor local.
+
+La página está hosteada en la plataforma Heroku utilizando su versión gratis. Posee ciertas limitaciones que son explicadas al abrir el enlace. Debido a los requerimientos de Heroku, la versión que está live no utiliza MySQL como base de datos sino PostgreSQL.
+
 ## Ejecución
 Una vez realizado el clone del repositorio, se deberán instalar los programas necesarios para poder ejecutar el trabajo. Entre ellos, se encuentran:
 
@@ -36,5 +42,3 @@ Luego, se deberán ejecutar las migraciones de la base de datos, lo que se hace 
 Finalmente, para ejecutar el servidor que muestra el sitio web en local, se debe ejecutar el comando ```rails s```
 
 Esto iniciará el servidor para que el sitio web se vea en ```http://localhost:3000/```
-
-En un futuro, se pondrá el sitio web construido a la vista mediante Heroku.
