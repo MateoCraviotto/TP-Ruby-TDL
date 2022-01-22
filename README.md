@@ -1,6 +1,6 @@
 # Trabajo Práctico - Teoría del Lenguaje
 
-Ecommerce desarrollado en Ruby on Rails - Trabajo práctico para la materia Teoría de Lenguaje [75.31 - 95.07] - FIUBA, 2c2021
+Ecommerce desarrollado en Ruby on Rails - Trabajo práctico para la materia Teoría de Lenguaje [75.31 - 95.07] - FIUBA, 2c2021.
 
 ## Integrantes:
 - Balmaceda, Fernando - [ferbalmaceda23](https://github.com/ferbalmaceda23)
@@ -34,11 +34,11 @@ Para más detalles sobre las gemas y sus versiones, ver el [Gemfile](https://git
 
 Primero, se debe ejecutar el setup de la base de datos, que carga los datos del archivo [seeds.rb] al inicio, para que aparezca una cuenta administradora con autos precargados al iniciar el servidor. Esto se hace con el comando ```rails db:setup```.
 
-Luego, se deberán ejecutar las migraciones de la base de datos, lo que se hace con el comando ```rails db:migrate```
+Luego, se deberán ejecutar las migraciones de la base de datos, lo que se hace con el comando ```rails db:migrate```.
 
 
 ### Ejecución del servidor
 
-Finalmente, para ejecutar el servidor que muestra el sitio web en local, se debe ejecutar el comando ```rails s```
+Finalmente, para ejecutar el servidor que muestra el sitio web en local, se debe ejecutar el comando ```rails s```.
 
-Esto iniciará el servidor para que el sitio web se vea en ```http://localhost:3000/```
+Esto iniciará el servidor para que el sitio web se vea en ```http://localhost:3000/```.
